@@ -1,0 +1,22 @@
+{
+  "name": "lucifer_morningstar",
+  "version": "1.0.0",
+  "description": "(。・∀・)ノ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadofriod/belong-to-me.git"
+  },
+  "keywords": [
+    "452406853"
+  ],
+  "author": "792634614@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sadofriod/belong-to-me/issues"
+  },
+  "homepage": "https://github.com/sadofriod/belong-to-me#readme"
+}
