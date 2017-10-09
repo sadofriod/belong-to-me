@@ -1,0 +1,315 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	overflow: hidden;
+}
+#navBox {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 100;
+	float: left;
+	display: none;
+	background-color: #FFFFFF;
+}
+
+.preview {
+	position: relative;
+	top: 0px;
+}
+
+#navButton {
+	height: 40px;
+	width: 92%;
+	padding-top: 2%;
+	padding-right: 3%;
+	padding-left: 5%;
+}
+
+#navButton span {
+	display: block;
+	border: 1px #b8b8b8 solid;
+	margin-top: 20%;
+	margin-bottom: 25%;
+	width: 25px;
+}
+
+#topBox {
+	top: 0px;
+	width: 100%;
+	height: 61.8%;
+	background-color: #FFFFFF;
+}
+
+#bottomBox {
+	height: 38.2%;
+	width: 100%;
+	bottom: 0px;
+	background-color: #5da0c6;
+}
+
+#contentBox {
+	width: 40%;
+	height: 60%;
+	margin-top: 25%;
+	float: right;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-family: "微软雅黑";
+	color: #B8B8B8;
+}
+
+#contentBox h2 {
+	font-size: 2em;
+}
+
+#contentBox p {
+	margin-top: 4%;
+	font-size: 0.7em;
+}
+
+#contentBox a {
+	display: inline-block;
+	border: 1px #5DA0C6 solid;
+	font-size: 0.8em;
+	margin-top: 5%;
+	padding: 5%;
+}
+
+#title {
+	height: 40px;
+}
+
+#joinUs {
+	float: left;
+	display: block;
+	border: 1px #fff solid;
+	box-shadow: 0px 0px 10px #FFFFFF;
+	border-radius: 50px;
+	padding: 2% 20% 2% 20%;
+	font-size: 1.5em;
+	margin-top: 15%;
+	color: #FFFFFF;
+	font-family: "times new roman";
+	background-color: rgba(0, 0, 0, 0);
+	outline: none;
+}
+
+.itemBox {
+	width: 40%;
+	margin-left: 5%;
+	margin-top: 25%;
+	float: left;
+}
+
+.carouselItem {
+	display: none;
+	width: 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: #FFFFFF;
+}
+
+.active {
+	display: block;
+}
+
+#carousel {
+	position: relative;
+}
+
+#bottomBox p {
+	margin-top: 17%;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 0.8em;
+}
+
+.close {
+	float: right;
+	display: block;
+	margin: 5px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 50%;
+	border: 1px #5DA0C6 solid;
+	width: 15px;
+	height: 15px;
+	line-height: 13px;
+}
+
+.navItem {
+	height: 3.5em;
+	width: 3.5em;
+	border-radius: 50%;
+	padding: 4px;
+	position: absolute;
+	color: #B8B8B8;
+	text-align: center;
+	box-shadow: 0px 0px 20px #5DA0C6;
+}
+
+.item1 {
+	top: 5%;
+	left: 40%;
+	box-shadow: 0px 0px 20px #B8B8B8 !important;
+}
+
+.item2 {
+	left: 5%;
+	bottom: 5%;
+}
+
+.item3 {
+	right: 5%;
+	bottom: 5%;
+	box-shadow: 0px 0px 20px palevioletred !important;
+}
+
+.clickAnimate {
+	position: absolute;
+	top: -20px;
+	box-shadow: 0px 0px 10px black;
+	z-index: 900;
+}
+
+.clickAnimate1 {
+	position: absolute;
+	bottom: -20px;
+	box-shadow: 0px 0px 10px black;
+	z-index: 900;
+}
+
+#moreInfo {
+	width: 100%;
+	display: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+
+#infoTitle {
+	position: absolute;
+	width: 95%;
+	padding: 2.5%;
+	padding-top: 0px;
+	color: #5DA0C6;
+	box-shadow: 0px 0px 8px #B8B8B8;
+	top: 0px;
+}
+
+.backIndex {
+	font-size: 1.5em;
+	float: left;
+	display: block;
+	height: 100%;
+}
+
+#infoTitle p {
+	font-size: 1em;
+	font-family: "微软雅黑";
+	text-align: center;
+	padding-top: 0.25em;
+}
+
+#infoContentBox {
+	font-family: "微软雅黑";
+	
+}
+
+.infoItem {
+	padding: 5px;
+	background-color: lavender;
+	width: 100%;
+	height: 80px;
+	margin-top: 8px;
+	overflow: hidden;
+}
+
+.itemtImg {
+	width: 70px;
+	height: 70px;
+	float: left;
+}
+
+.itemText {
+	font-size: 0.8em;
+	color: #222222;
+	height: 100%;
+	float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	overflow: hidden;
+}
+
+.closeInfo {
+	clear: both;
+	text-align: center;
+}
+
+.itemtImgOpen{
+	height: 40% !important;
+	width: 100% !important;
+	float: none !important;
+}
+.itemTextOpen{
+	width: 90%;
+	padding:0 5% 0 5%;
+	float: none !important;
+	height: 55% !important;
+}
+.closeInfoOpen {
+	position: absolute;
+	bottom:0px;
+	height: 5%;
+	width: 100%;
+	border-top: 1px #FFFFFF solid;
+}
+.joinUsTableBox{
+	position: fixed;
+	top: 0px;
+	display: none;
+	background-color: rgba(255,255,255,0.7);
+	height: 100%;
+}
+.joinUsTableBox *{
+	outline: none;
+}
+.joinUsTable{
+	width: 85%;
+	margin-left: 6.25%;
+	height: 80%;
+	margin-top: 20%;
+	text-align: center;
+	color: #B8B8B8;
+	background-color: #FFFFFF;
+	border-radius:5px ;
+	box-shadow: 0px 0px 10px #B8B8B8;
+}
+.userInfo{
+	height: 10%;
+	margin-top: 3%;
+	padding-left: 1em;
+	width: 80%;
+	color: darkgrey;
+}
+.joinUsTable button{
+	background-color: #5DA0C6;
+	font-size: 1.3em;
+	border:0px ;
+	border-radius:50px ;
+	color: #FFFFFF !important;
+	padding-left: 0px !important;
+}
+.navItem{
+	display: none;
+	font-size: 0.8em;
+	font-family: "微软雅黑";
+	overflow-y:scroll ;
+	overflow-x:hidden;
+	word-wrap: break-word;
+}

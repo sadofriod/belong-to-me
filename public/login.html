@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<style>
+			.container {
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-image: url(img/login_background.png);
+				overflow: hidden;
+				height: 700px;
+			}
+			
+			.mui-content {
+				display: none;
+			}
+			
+			.login-pro {
+				height: 60%;
+				position: relative;
+				top: 20%;
+				width: 90%;
+				left: 5%;
+				padding-left: 5%;
+				padding-right: 5%;
+				margin-bottom: 140px;
+			}
+			
+			.login-pro button {
+				width: 60%;
+				height: 10%;
+				margin-left: 20%;
+				margin-top: 25px;
+				background-color: rgba(0, 0, 0, 0);
+				border: 1px solid #FFFFFF;
+				border-radius: 50px;
+				box-shadow: 0px 0px 10px #FFFFFF;
+				text-shadow: 1px 1px 20px #FFFFFF;
+				animation: showButton 700ms;
+				-webkit-animation: showButton 700ms;
+			}
+			
+			@keyframes showButton {
+				from {
+					opacity: 0;
+					margin-top: 15px;
+				}
+				to {
+					opacity: 1;
+					margin-top: 25px;
+				}
+			}
+			
+			@-webkit-keyframes showButton {
+				from {
+					opacity: 0;
+					margin-top: 15px;
+				}
+				to {
+					opacity: 1;
+					margin-top: 25px;
+				}
+			}
+			
+			@keyframes showWords {
+				from {
+					opacity: 0.25;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			
+			@-webkit-keyframes showWords {
+				from {
+					opacity: 0.25;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			
+			.login-pro h1 {
+				margin: 0px;
+				margin-bottom: 60px;
+				color: #FFFFFF;
+				text-align: center;
+				animation: showWords 1.5s;
+				-webkit-animation: showWords 1.5s;
+				text-shadow: 1px 1px 20px #FFFFFF;
+			}
+			
+			.lead-words {
+				color: #FFFFFF;
+				text-align: center;
+				padding-left: 8%;
+				padding-right: 8%;
+				margin: 0px;
+				animation: showWords 1.5s;
+				-webkit-animation: showWords 1.5s;
+			}
+			
+			.mui-bar {
+				display: none;
+			}
+			
+			.link-area {
+				text-align: center;
+			}
+			
+			.mui-pull-left {
+				font-size: 30px;
+				line-height: 40px;
+			}
+			
+			#login {
+				top: 44px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="login-pro">
+				<h1>Discover Your<br /> True Self</h1>
+				<button id='show-login' class="mui-btn mui-btn-primary">Sign in</button>
+				<button id='go-reg' class="mui-btn mui-btn-primary">Sign up</button>
+				<button id='come-in' class="mui-btn mui-btn-primary">Direct Access</button>
+			</div>
+
+			<p class="lead-words">You are always stronger than you think, and the light will direct your way</p>
+		</div>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left">&lsaquo;</a>
+			<h1 class="mui-title">登录</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						自动登录
+						<div id="autoLogin" class="mui-switch">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<div class="mui-content-padded">
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">Sign in</button>
+
+				<div class="link-area">
+					<a id='reg'>注册账号</a> <span class="spliter">|</span>
+					<a id='forgetPassword'>忘记密码</a>
+				</div>
+			</div>
+			<div class="mui-content-padded oauth-area">
+
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/app.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script>
+			(function($, doc) {
+				$.init({
+					statusBarBackground: '#f7f7f7'
+				});
+				$.plusReady(function() {
+					plus.navigator.setStatusBarBackground('#000000');
+					plus.screen.lockOrientation("portrait-primary");
+					var height = plus.display.resolutionHeight;
+					var width = plus.display.resolutionWidth;
+					console.log(height)
+
+					doc.querySelector('.container').style.height = height + 1 + 'px';
+					var settings = app.getSettings();
+					var state = app.getState();
+					var mainPage = $.preload({
+						"id": 'new_show',
+						"url": 'new_show.html'
+					});
+					jQuery('#show-login').on('click', function(e) {
+						jQuery('.container').fadeOut(300);
+						setTimeout(function() {
+							jQuery('.mui-content,.mui-bar,.mui-bar > *').fadeIn(100)
+						}, 300)
+
+					})
+					jQuery('.mui-pull-left').click(function() {
+						jQuery('.mui-content,.mui-bar,.mui-bar > *').fadeOut(100)
+
+						setTimeout(function() {
+							jQuery('.container').fadeIn(300)
+
+						}, 100)
+					})
+					var toMain = function() {
+						$.fire(mainPage, 'show', null);
+						setTimeout(function() {
+							$.openWindow({
+								id: 'new_show',
+								show: {
+									aniShow: 'fade-in'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+//							var second = plus.webview.getWebviewById('new_show');
+//							console.log(second)
+//							second.evalJS("plus.navigator.getStatusBarBackground('#5DA0C6')")
+							plus.navigator.setStatusBarBackground('#5DA0C6');
+
+						}, 0);
+
+					};
+					if(settings.autoLogin && state.token) {
+						doc.getElementById('show-login').addEventListener('tap', toMain)
+					}
+					doc.getElementById('come-in').addEventListener('tap', toMain)
+					$('#come-in').on('tap', toMain);
+					var loginButton = doc.getElementById('login');
+					var accountBox = doc.getElementById('account');
+					var passwordBox = doc.getElementById('password');
+					var autoLoginButton = doc.getElementById("autoLogin");
+					var regButton = doc.getElementById('reg');
+					var goRegButton = doc.getElementById('go-reg');
+					var forgetButton = doc.getElementById('forgetPassword');
+					loginButton.addEventListener('tap', function(event) {
+						var loginInfo = {
+							account: accountBox.value,
+							password: passwordBox.value
+						};
+						app.login(loginInfo, function(err) {
+							if(err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							toMain();
+						});
+					});
+					$.enterfocus('#login-form input', function() {
+						$.trigger(loginButton, 'tap');
+					});
+					autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('mui-active')
+					autoLoginButton.addEventListener('toggle', function(event) {
+						setTimeout(function() {
+							var isActive = event.detail.isActive;
+							settings.autoLogin = isActive;
+							app.setSettings(settings);
+						}, 50);
+					}, false);
+					//				regButton.addEventListener('tap', function(event) {
+					//					$.openWindow({
+					//						url: 'reg.html',
+					//						id: 'reg',
+					//						preload: true,
+					//						show: {
+					//							aniShow: 'fade-in'
+					//						},
+					//						styles: {
+					//							popGesture: 'hide'
+					//						},
+					//						waiting: {
+					//							autoShow: false
+					//						}
+					//					});
+					//				}, false);
+					goRegButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'reg.html',
+							id: 'reg',
+							preload: true,
+							show: {
+								aniShow: 'fade-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);
+					forgetButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'forget_password.html',
+							id: 'forget_password',
+							preload: true,
+							show: {
+								aniShow: 'fade-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);
+
+					//
+					var backButtonPress = 0;
+					$.back = function(event) {
+						backButtonPress++;
+						
+						if(backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

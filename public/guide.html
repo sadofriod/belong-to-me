@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<style>
+			h5 {
+				padding-top: 15px;
+			}
+			
+			.field-contain label {
+				width: auto;
+				padding-right: 0;
+			}
+			
+			.field-contain input[type='text'] {
+				width: 40px;
+				height: 30px;
+				padding: 5px 0;
+				float: none;
+				text-align: center;
+			}
+			
+			input[type=range] {
+				-webkit-appearance: none;
+				width: 300px;
+				border-radius: 10px;
+				/*这个属性设置使填充进度条时的图形为圆角*/
+			}
+			
+			input[type=range]::-webkit-slider-thumb {
+				-webkit-appearance: none;
+			}
+			
+			input[type=range]::-webkit-slider-runnable-track {
+				height: 10px;
+				border-radius: 10px;
+				/*将轨道设为圆角的*/
+				box-shadow: 0px 0px 10px #def3f8;
+				/*轨道内置阴影效果*/
+			}
+			
+			input[type=range]::-webkit-slider-thumb {
+				-webkit-appearance: none;
+				height: 10px;
+				width: 10px;
+				margin-top: -5px;
+				/*使滑块超出轨道部分的偏移量相等*/
+				background: #ffffff;
+				border-radius: 50%;
+				/*外观设置为圆形*/
+				border: solid 0.125em rgba(205, 224, 230, 0.5);
+				/*设置边框*/
+				box-shadow: 0 .125em .125em #3b4547;
+				/*添加底部阴影*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="nav"></div>
+		<div class="mui-slider">
+			<div class="mui-slider-group">
+				<!--第一个内容区容器-->
+				<div class="mui-slider-item">
+					<div style="display: flex; height: 100%; padding-top: 30%;">
+						<img src="img/boy.png" style="border-radius: 50%; box-shadow: 0px 0px 10px #5DA0C6; height: 110px; width: 110px;margin-left:14% ;" />
+						<img src="img/girl.png" style="border-radius: 50%; box-shadow: 0px 0px 10px #5DA0C6; height: 110px; width: 110px; margin-left:12% ;" />
+					</div>
+				</div>
+				<!--第二个内容区-->
+				<div class="mui-slider-item">
+					<!-- 具体内容 -->
+					699569
+				</div>
+				<div class="mui-slider-item">
+					<canvas style="background-color: rgba(93,160,198,.15); width: 100%;"></canvas>
+					<h5 style="clear: left;">整行滑块：<span id='block-range-val'>50</span></h5>
+					<div class="mui-input-row mui-input-range">
+						<input type="range" id='block-range' value="50" min="0" max="100">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/mui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script>
+		mui.init();
+		mui.plusReady(function() {
+			height = plus.display.resolutionHeight;
+			width = plus.display.resolutionWidth;
+			var navHeigth = plus.navigator.getStatusbarHeight();
+			console.log(navHeigth);
+			document.getElementById('nav').style.height = navHeigth;
+			document.querySelector('canvas').style.height = (height / 2) - (92 / 2) + 'px'
+		})
+		//		var item2Show = false,
+		//			item3Show = false; //子选项卡是否显示标志
+		//		document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+		//			if(event.detail.slideNumber === 1 && !item2Show) {
+		//				//切换到第二个选项卡
+		//				//根据具体业务，动态获得第二个选项卡内容；
+		//				var content;
+		//				//显示内容
+		//				document.getElementById("item2").innerHTML = content;
+		//				//改变标志位，下次直接显示
+		//				item2Show = true;
+		//			} else if(event.detail.slideNumber === 2 && !item3Show) {
+		//				//切换到第三个选项卡
+		//				//根据具体业务，动态获得第三个选项卡内容；
+		//				var content ;
+		//				//显示内容
+		//				document.getElementById("item3").innerHTML = content;
+		//				//改变标志位，下次直接显示
+		//				item3Show = true;
+		//			}
+		//		});
+		$('.mui-input-range').css({
+			height:'20px',
+		})
+	</script>
+
+</html>

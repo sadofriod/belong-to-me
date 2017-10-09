@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="test">
+			<button id="write">submit</button>
+			<button id="read">read</button>
+			<button id="testPost"></button>
+			<p id="testData"></p>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var write = document.getElementById('write');
+			var read = document.getElementById('read');
+			var testPost = document.getElementById('testPost');
+			var week;
+			write.onclick = function() {
+				localStorage.week = undefined;
+			}
+			read.onclick = function() {
+				var test = localStorage.week;
+				
+				document.getElementById('testData').innerHTML =test
+			}
+		</script>
+	</body>
+
+</html>

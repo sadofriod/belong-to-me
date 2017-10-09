@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.0.js">
+		</script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/icons-extra.css" />
+		<style>
+			.mui-card-content img {
+				margin: 5px;
+				max-width: 100%;
+				max-height: 150px;
+			}
+			
+			.mui-card {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+			
+			#expandMore {
+				cursor: pointer;
+			}
+			
+			#briefInfo {
+				height: 20px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media">
+					<img class="user" src="img/carousel1.png" />
+					<div class="mui-media-body">
+						<span class="username">柳舒眉</span>
+						<p class="time">发表于 2017-06-30 17:32</p>
+					</div>
+					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
+					<h2>小M</h2>
+					<p>发表于 2016-06-30 15:30</p>-->
+				</div>
+				<div class="mui-card-content">
+					<img src="images/yuantiao.jpg" />
+					<div class="mui-card-content-inner">
+						<p style="color: #333333;">这里显示兼职内容摘要，让有需求的人对兼职内容有个粗略的概念...</p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
+						10/55人
+					</span></a>
+					<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
+					</span></a>
+					<a class="mui-card-link eye" name="0"><span class="mui-icon mui-icon-eye">
+						
+					</span></a>
+				</div>
+			</div>
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media">
+					<img class="user" src="img/carousel2.png" />
+					<div class="mui-media-body">
+						<span class="username">罗辑</span>
+						<p class="time">发表于 2017-06-30 15:30</p>
+					</div>
+
+				</div>
+				<div class="mui-card-content">
+					<img src="images/qihoo.png" />
+					<div class="mui-card-content-inner">
+						<div id="briefInfo">
+							<p style="color: #333333;">这里显示兼职详细内容，让有需要的人明白兼职的时间，工资，兼职地点，等等一系列详细情况</p>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
+						5/99人
+					</span></a>
+					<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
+						
+					</span></a>
+					<a class="mui-card-link eye" name="0"><span class="mui-icon mui-icon-eye">
+					</span></a>
+				</div>
+			</div>
+			<div class="mui-off-canvas-backdrop"></div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			$('#expandMore').click(function() {
+				$('#briefInfo').css({
+					'height': 'auto',
+					'overflow': 'none'
+				});
+				$('#expandMore').toggle();
+			});
+			$('.more').on('tap', function() {
+				mui.openWindow({
+					url: 'detailed.html',
+					id: 'detailed',
+				})
+			})
+			$('.user').click(function() {
+				mui.openWindow({
+					url: 'chat.html',
+					id: 'chat'
+				})
+			})
+			$('.mui-icon-chat').click(function() {
+				mui.openWindow({
+					url: 'feedback.html',
+					id: 'feedback.html'
+				})
+			})
+			$('.eye').on('click', function(e) {
+				if($(this).attr('name') == 0) {
+					mui.toast('关注成功');
+					$(this).attr('name', 1);
+				} else {
+					mui.toast('取消关注');
+				}
+			})
+			$('.mui-card-content').click(function() {
+				var src = $(this).parent().find('.head').attr('src');
+				var name = $(this).parent().find('.username').html();
+				var time = $(this).parent().find('.time').html();
+				var pic = $(this).find('img').attr('src')
+				mui.openWindow({
+					url: 'detailed.html',
+					id: 'detailed',
+					extras: {
+						picSrc: src,
+						pic: pic,
+						name: name,
+						time: time
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

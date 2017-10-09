@@ -1,0 +1,215 @@
+{
+	"index.html": {
+		"resources": [
+			"img/carousel1.png",
+			"img/logo1.jpg",
+			"js/mui.min.js",
+			"img/LOGO.png",
+			"js/Carousel.js",
+			"js/jquery-2.1.0.js",
+			"css/informationIntroduction.css",
+			"js/informationIntroduction.js",
+			"img/carousel2.png",
+			"img/carousel3.png",
+			"test.html"
+		],
+		"refer": [
+			"test.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/login_custum.js",
+			"js/mui.enterfocus.js",
+			"img/login_background.png",
+			"js/jquery-2.1.0.js"
+		],
+		"refer": [
+			"index.html",
+			"reg.html",
+			"forget_password.html",
+			"new_show.html"
+		]
+	},
+	"reg.html": {
+		"resources": [
+			"css/mui.min.css",
+			"js/app.js",
+			"js/mui.min.js"
+		],
+		"refer": [
+			"login.html"
+		]
+	},
+	"new_show.html": {
+		"resources": [
+			"index.html",
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"recommendedInformation.html",
+			"js/silderMenu.js"
+		],
+		"refer": [
+			"index.html",
+			"recommendedInformation.html",
+			"offcanvas-drag-right-plus-menu.html",
+			"trends.html",
+			"chatList.html",
+			"pluralism1.html",
+			"setting.html",
+			"guide.html"
+		]
+	},
+	"recommendedInformation.html": {
+		"resources": [
+			"css/mui.min.css",
+			"img/H5.png",
+			"img/26002.jpg",
+			"js/mui.min.js",
+			"js/jquery-2.1.0.js",
+			"images/yuantiao.jpg",
+			"img/11e68b32340551721a791252e9b9b0ab.jpg",
+			"css/icons-extra.css",
+			"fonts/mui-icons-extra.ttf",
+			"img/timg.png",
+			"img/carousel1.png",
+			"images/qq.png",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"feedback.html",
+			"clockWork.html",
+			"detailed.html",
+			"chat.html"
+		]
+	},
+	"test.html": {
+		"resources": [
+			"js/wangEditor.min.js",
+			"js/jquery-2.1.0.js"
+		],
+		"refer": []
+	},
+	"offcanvas-drag-right-plus-menu.html": {
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"images/yuantiao.jpg"
+		],
+		"refer": []
+	},
+	"trends.html": {
+		"resources": [
+			"fonts/mui-icons-extra.ttf",
+			"img/26002.jpg",
+			"img/11e68b32340551721a791252e9b9b0ab.jpg",
+			"css/icons-extra.css",
+			"images/yuantiao.jpg",
+			"css/mui.min.css",
+			"js/jquery-2.1.0.js"
+		],
+		"refer": [
+			"chat.html"
+		]
+	},
+	"chatList.html": {
+		"resources": [
+			"img/carousel2.png",
+			"css/mui.min.css",
+			"img/26002.jpg",
+			"images/yuantiao.jpg",
+			"js/mui.min.js"
+		],
+		"refer": []
+	},
+	"chat.html": {
+		"resources": [
+			"css/mui.min.css",
+			"css/mui.imageviewer.css",
+			"js/mui.imageViewer.js",
+			"js/arttmpl.js",
+			"img/26002.jpg",
+			"js/mui.min.js",
+			"images/user-photo.png",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"feedback.html": {
+		"resources": [
+			"css/feedback.css",
+			"js/feedback.js",
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"clockWork.html": {
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": []
+	},
+	"pluralism1.html": {
+		"resources": [
+			"js/jquery-2.1.0.js",
+			"img/26002.jpg",
+			"img/11e68b32340551721a791252e9b9b0ab.jpg",
+			"css/icons-extra.css",
+			"fonts/mui-icons-extra.ttf",
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"images/qihoo.png",
+			"images/user-photo.png",
+			"img/carousel2.png",
+			"images/yuantiao.jpg",
+			"img/carousel1.png",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"detailed.html",
+			"chat.html"
+		]
+	},
+	"detailed.html": {
+		"resources": [
+			"css/mui.min.css",
+			"img/11e68b32340551721a791252e9b9b0ab.jpg",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/icons-extra.css",
+			"img/timg.png",
+			"img/carousel1.png"
+		],
+		"refer": []
+	},
+	"setting.html": {
+		"resources": [
+			"js/feedback.js",
+			"js/mui.view.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"css/feedback.css",
+			"images/user-photo.png"
+		],
+		"refer": []
+	},
+	"guide.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/boy.png",
+			"img/girl.png",
+			"js/range.js",
+			"js/jquery-2.1.0.js"
+		],
+		"refer": []
+	}
+}

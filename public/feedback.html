@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="feedback">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>问题反馈</title>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/feedback.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #5DA0C6; color: #FFFFFF;">
+			<p class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  style="color: #FFFFFF;"></p>
+			<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" style="color: #FFFFFF;">发表</button>
+			<h1 class="mui-title"  style="color: #FFFFFF;">评论</h1>
+		</header>
+		<div class="mui-content">
+			<div class="row mui-input-row">
+				<p id='question' contenteditable="true" class="mui-input-clear question" placeholder="说点什么吧" style="height: 200px;"></p>
+				
+			</div>
+			<div id='image-list' class="row image-list"></div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src=" js/feedback.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			var w= localStorage.week || '';
+			if(w == null){
+				document.getElementById('question').innerHTML= 'fail'
+			}
+			else{
+				document.getElementById('question').innerHTML=w;
+			}
+		</script>
+	</body>
+
+</html>

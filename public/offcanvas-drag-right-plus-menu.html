@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			body, .mui-content {
+				background-color: #FFFFFF;
+				color: #222;
+			}
+			header.mui-bar{
+				display: none;
+			}
+			.mui-bar-nav~.mui-content{
+				padding: 0;
+			}
+			 .title{
+			  	margin: 15px;
+			  	
+			  }
+			  .title+.content{
+			  	margin: 10px 15px 35px;
+			  	color: #bbb;
+			  	text-indent: 1em;
+			  	font-size: 14px;
+			  	line-height: 24px;
+			  }
+			  .mui-table-view{
+			  	margin-bottom: 35px;
+			  }
+			  .mui-table-view{
+			  	background-color: #FFFFFF;
+			  	color: #222;
+			  }
+			  .mui-table-view-cell{
+			  	background-color: #FFFFFF;
+			  	border-color:#5DA0C6 ;
+			  	margin-bottom: 5px;
+			  	border: 0px;
+			  	position: static;
+			  }
+			  .mui-media-object{
+			  	width: 50px;
+			  	height: 50px;
+			  	border: 1px solid rgba(0,98,204,.25);
+			  	margin-right: 5px;
+			  	border-radius:50% ;
+			  }
+			  .title .mui-table-view-cell{
+			  	padding: 0px;
+			  	height: 50px;
+			  }
+			  .mui-table-view:after{
+			  	background-color: #FFFFFF;
+			  }
+			  .mui-table-view:after{
+			  	background-color: #FFFFFF;
+			  }
+			  .mui-table-view-inverted .mui-table-view-cell:after{
+			  	background-color: #FFFFFF;
+			  }
+		</style>
+	</head>
+	<body>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="title">
+				<div class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg">
+						<div class="mui-media-body">
+							幸福
+							<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="content">
+				</div>
+				<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+					<div class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 1
+						</a>
+					</div>
+					<div class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 2
+						</a>
+					</div>
+					<div class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 3
+						</a>
+					</div>
+					<div class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 4
+						</a>
+					</div>
+					<div class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 5
+						</a>
+					</div>
+					<div class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							Item 6
+						</a>
+					</div>
+				</ul>
+				<button id="close-btn" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 5px 20px; width: 60%; margin-left:20% ;background-color: #5DA0C6;border: 0px;">关闭</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				keyEventBind: {
+					backbutton: false,
+					menubutton: false
+				}
+			});
+			//获得侧滑主窗口webview对象
+			var main = null;
+			mui.plusReady(function () {
+				main = plus.webview.currentWebview().opener();
+			})
+			function closeMenu () {
+				mui.fire(main,"menu:swipeleft");
+			}
+			//优化显示出来的侧滑菜单，只需监听该菜单的左滑事件，然后将其关闭即可；在菜单上右滑，不做任何操作；
+			window.addEventListener("swipeleft",closeMenu);  
+			document.getElementById("close-btn").addEventListener('tap',closeMenu);
+			mui.menu = closeMenu;
+		</script>
+</body>
+
+</html>

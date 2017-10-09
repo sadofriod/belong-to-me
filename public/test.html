@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<title>完整demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<style>
+			*{
+				overflow: hidden;
+			}
+			.w-e-toolbar{
+				
+			}
+			.w-e-menu{
+				float: left;
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+
+	<body style="margin: 0px;">
+		<div class="container">
+			<div id="editor">
+
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/wangEditor.min.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script>
+		var E = window.wangEditor;
+		var editor = new E('#editor');
+		editor.customConfig.uploadImgShowBase64 = true
+		editor.create();
+		var height = $(window).height();
+		var width = $(window).width();
+			$('.container').css({
+				height: height,
+				width: width
+			})
+		$('#editor').css({
+			height: '100%',
+			width: '100%',
+			margin:'0 auto'
+		})
+		$('.w-e-text-container').css('height','100%')
+		alert(('.w-e-toolbar').html())
+		$('.w-e-toolbar').append("<div style='clear: both;'></div>")
+		$('.container').resize(function() {
+			$('.container').css({
+				height: height,
+				width: width
+			})
+		})
+	</script>
+
+</html>

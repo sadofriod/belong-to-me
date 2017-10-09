@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="css/informationIntroduction.css" />
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/Carousel.js"></script>
+		<script type="text/javascript" src="js/informationIntroduction.js"></script>
+	</head>
+	<body style="-webkit-user-select: none;">
+		<!--导航栏容器-->
+		<div id="navBox">
+			<a class="close">x</a>
+			<div class="item1 navItem">数据</div>
+			<div class="item2 navItem">架构</div>
+			<div class="item3 navItem">设计</div>
+		</div>
+		<div class="preview">
+			<div id="topBox">
+				<div id="navButton">
+					<div style="float: left;">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<img height="40px" style="float: right;" src="img/LOGO.png" />
+				</div>
+				<div class="itemBox">
+					<div id="_item1" class="carouselItem active" style="background-image: url(img/carousel2.png);"></div>
+					<div id="_item2" class="carouselItem" style="background-image: url(img/carousel1.png);"></div>
+					<div id="_item3" class="carouselItem" style="background-image: url(img/carousel3.png);"></div>
+				</div>
+				<div id="contentBox">
+					<h2>
+						信息工程<br />联<span></span>合<br />实验室
+					</h2>
+					<p>学习更多的前沿技术打造高质量的大学生活</p>
+					<a>Further info &ensp;&rsaquo;&rsaquo;</a>
+				</div>
+			</div>
+			<div id="bottomBox">
+
+				<button id="joinUs">Join Us</button>
+				<div style="clear: both;"></div>
+				<p>这里写标语，但是想不到要写点啥，应该是励志的话 或者可以放下实验室负责</p>
+			</div>
+		</div>
+		<div id="moreInfo">
+			<div id="infoTitle">
+				<a class="backIndex">&lsaquo;&ensp;</a>
+				<p onclick="window.open('test.html')">Further Information</p>
+			</div>
+			<div style="height: 40px;"></div>
+			<div id="infoContentBox">
+				<div class="infoItem">
+					<img class="itemtImg" src="img/logo1.jpg" />
+					<p class="itemText">在维克托·迈尔-舍恩伯格及肯尼斯·库克耶编写的《大数据时代》[2]  中大数据指不用随机分析法（抽样调查）这样捷径，而采用所有数据进行分析处理。大数据的5V特点（IBM提出）：Volume（大量）、Velocity（高速）、Variety（多样）、Value（低价值密度）、Veracity（真实性）。</p>
+					<div class="closeInfo"></div>
+				</div>
+				<div class="infoItem">
+					<img class="itemtImg" src="img/logo1.jpg" />
+					<p class="itemText">在维克托·迈尔-舍恩伯格及肯尼斯·库克耶编写的《大数据时代》[2]  中大数据指不用随机分析法（抽样调查）这样捷径，而采用所有数据进行分析处理。大数据的5V特点（IBM提出）：Volume（大量）、Velocity（高速）、Variety（多样）、Value（低价值密度）、Veracity（真实性）。</p>
+					<div class="closeInfo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="joinUsTableBox">
+			<div class="joinUsTable">
+				<h2>Tell us your information</h2>
+				<input class="userInfo" id="userName" value="Your ture name"/>
+				<input class="userInfo" id="userId" value="Your ID of student card"/>
+				<input class="userInfo" id="userPhone" value="Your number of phone"/>
+				<input class="userInfo" id="year" value="Your enrollment year"/>
+				<input class="userInfo" id="class" value="Your class"/>
+				<button class="userInfo" id="submit">submit</button>
+				<button class="userInfo" id="cancel">cancel</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		mui.init();
+	</script>
+</html>
