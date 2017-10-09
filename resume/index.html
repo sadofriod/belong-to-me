@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			.container {
+				position: relative;
+			}
+			
+			.item {
+				width: 120px;
+				height: 120px;
+				box-shadow: 0px 0px 10px #31B0D5;
+				border-radius: 50%;
+				position: absolute;
+				display: none;
+				font-size: 25px;
+				text-align: center;
+				font-family: "微软雅黑";
+				color: #269ABC;
+				line-height: 120px;
+			}
+			.mask{
+				display: none;
+				position: fixed;
+				width: 80%;
+				height: 70%;
+				top: 10%;
+				left: 10%;
+				z-index: 101;
+				border-radius: 8px;
+				padding-left: 2%;
+				padding-right: 2%;
+				background-color: #FFFFFF;
+				
+			}
+			.maskBg{
+				display: none;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				z-index: 100;
+				top: 0px;
+				background-color: rgba(34,34,34,.45);
+			}
+			.fontStyle{
+				font-size: 1.2em;
+				font-family: "微软雅黑";
+				margin-bottom: 5%;
+				border-bottom: 1px solid #31B0D5;
+				display: inline-block;
+			}
+			#head{
+				border-radius: 20px;
+			}
+			.personalIntroduction{
+				margin-bottom:10px ;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="item" data-toggle="0" >个人介绍</div>
+			<div class="item" data-toggle="1">教育背景</div>
+			<div class="item" data-toggle="2">项目经验</div>
+			<div class="item" data-toggle="3">校园经历</div>
+			<div class="item" data-toggle="4">技能偏向</div>
+			<div class="item" data-toggle="5">自我评价</div>
+		</div>
+		<div class="mask">
+			<h2 style="color: #31B0D5;padding-bottom: 10px; border-bottom: 2px solid #31B0D5;">个人介绍</h2>
+			<div class="personalIntroduction row">
+				
+				<div class="dataBox col-lg-9">
+					<div class="leftData col-lg-5">
+						<span class="fontStyle">姓名:&ensp;</span><span class="fontStyle">杜士华</span><br />
+						<span class="fontStyle">民族:&ensp;</span><span class="fontStyle">汉族</span><br />
+						<span class="fontStyle">电话:&ensp;</span><span class="fontStyle">15247124825</span><br />
+						<span class="fontStyle">邮箱:&ensp;</span><span class="fontStyle">792634614@qq.com</span><br />
+						<span class="fontStyle">住址:&ensp;</span><span class="fontStyle">内蒙古工业大学金川校区上院宿舍2#105</span><br />
+					</div>
+					<div class="rightData col-lg-5">
+						<span class="fontStyle">出生年月：&ensp;</span><span class="fontStyle">1996-12</span><br />
+						<span class="fontStyle">身&ensp;&ensp;&ensp;&ensp;高：&ensp;</span><span class="fontStyle">175cm</span><br />
+						<span class="fontStyle">政治面貌</span><span class="fontStyle">共青团员</span><br />
+						<span class="fontStyle">院&ensp;&ensp;&ensp;&ensp;校：&ensp;</span><span class="fontStyle">内蒙古工业大学</span><br />
+						<span class="fontStyle">学&ensp;&ensp;&ensp;&ensp;历：&ensp;</span><span class="fontStyle">本科（预计毕业）</span><br />
+					</div>
+				</div>
+				<img id="head" class="col-lg-3" src="img/1502724032980.png" width="20%"/>
+
+			</div>
+				<p style="text-align: center;padding-top: 10px; border-top: 2px solid #31B0D5;"><a  href="https://github.com/sadofriod/belong-to-me">https://github.com/sadofriod/belong-to-me</a></p>
+			
+		</div>
+		<div class="maskBg"></div>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+	<script>
+		var height = $(window).height();
+		var width = $(window).width();
+		$('.container').css({
+			height: height,
+			width: width
+		})
+		var setInit = function(){
+			$('.item').css({
+				top:height/2,
+				right:width/2
+			})
+		}()
+		function draw(rote) { //获取元素坐标
+			var y = (height - 80) / 2;
+			//圆心纵坐标
+			var x = width / 2;
+			//圆心横坐标
+			var r = (height - 120) / 2;
+			//半径
+			//x1   =   x0   +   r   *   cos(ao   *   3.14   /180   ) 
+			//y1   =   y0   +   r   *   sin(ao   *   3.14   /180   )
+			var sit = {};
+			sit.x1 = Math.round(x + r * Math.cos(rote * 3.14 / 180));
+			sit.y1 = Math.round(y + r * Math.sin(rote * 3.14 / 180));
+			console.log(sit.x1 + "  " + sit.y1)
+			return sit;
+		}
+		var roll = $('.container').children();
+		var i1 = 0; //循环变量
+		var k = 0; //起始旋转角度
+		var flag1 = setInterval(function() {
+			var r = draw(k);
+			$(roll[i1]).show(250);
+			$(roll[i1]).animate({
+				top:r.y1,
+				right:r.x1
+			},260)
+			k+=60;
+			i1++;
+			if(i1 > 6){
+				clearInterval(flag1);
+				return;
+			}
+		}, 450);
+		$('.container').on('click','.item',function(e){
+			$('.maskBg').show();
+			$('.mask').show(200)
+		})
+		$('.maskBg').click(function(){
+			$('.mask').hide(200)
+			setTimeout($(this).hide(),210)
+			
+		})
+	</script>
+
+</html>
