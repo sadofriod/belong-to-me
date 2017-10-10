@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
@@ -23,7 +22,8 @@
 				color: #269ABC;
 				line-height: 120px;
 			}
-			.mask{
+			
+			.mask {
 				display: none;
 				position: fixed;
 				width: 80%;
@@ -35,36 +35,68 @@
 				padding-left: 2%;
 				padding-right: 2%;
 				background-color: #FFFFFF;
-				
 			}
-			.maskBg{
+			
+			.maskBg {
 				display: none;
 				position: fixed;
 				width: 100%;
 				height: 100%;
 				z-index: 100;
 				top: 0px;
-				background-color: rgba(34,34,34,.45);
+				background-color: rgba(34, 34, 34, .45);
 			}
-			.fontStyle{
+			
+			.fontStyle {
 				font-size: 1.2em;
 				font-family: "微软雅黑";
 				margin-bottom: 5%;
 				border-bottom: 1px solid #31B0D5;
 				display: inline-block;
 			}
-			#head{
+			
+			#head {
 				border-radius: 20px;
 			}
-			.personalIntroduction{
-				margin-bottom:10px ;
+			
+			.personalIntroduction {
+				margin-bottom: 10px;
+				display: none;
+			}
+			
+			.leftData {
+				border-left: 1px solid #31B0D5;
+			}
+			.selfAssessment{
+				display: none;
+			}
+			.skillData{
+				height: 20px;
+				width: 65%;
+				border-radius: 20px;
+				border: 1px solid rgba(49,176,213,.25);
+			}
+			.skillData div{
+				background-color: #31B0D5;
+				border-radius: 20px;
+				height: 100%;
+				text-align: right;
+				padding-right: 10px;
+				color: #FFFFFF;
+			}
+			.skillBiased{display: none;margin-bottom: 10px;}
+			.skillBiased span{
+				font-size: 1.2em;
+				font-family: "微软雅黑";
+				margin-bottom: 5%;
+				display: inline-block;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div class="container">
-			<div class="item" data-toggle="0" >个人介绍</div>
+			<div class="item" data-toggle="0">个人介绍</div>
 			<div class="item" data-toggle="1">教育背景</div>
 			<div class="item" data-toggle="2">项目经验</div>
 			<div class="item" data-toggle="3">校园经历</div>
@@ -74,7 +106,6 @@
 		<div class="mask">
 			<h2 style="color: #31B0D5;padding-bottom: 10px; border-bottom: 2px solid #31B0D5;">个人介绍</h2>
 			<div class="personalIntroduction row">
-				
 				<div class="dataBox col-lg-9">
 					<div class="leftData col-lg-5">
 						<span class="fontStyle">姓名:&ensp;</span><span class="fontStyle">杜士华</span><br />
@@ -91,16 +122,71 @@
 						<span class="fontStyle">学&ensp;&ensp;&ensp;&ensp;历：&ensp;</span><span class="fontStyle">本科（预计毕业）</span><br />
 					</div>
 				</div>
-				<img id="head" class="col-lg-3" src="img/1502724032980.png" width="20%"/>
-
+				<img id="head" class="col-lg-3" src="img/1502724032980.png" width="20%" />
 			</div>
-				<p style="text-align: center;padding-top: 10px; border-top: 2px solid #31B0D5;"><a  href="https://github.com/sadofriod/belong-to-me">https://github.com/sadofriod/belong-to-me</a></p>
-			
+			<div class="selfAssessment">
+				<p>一个兴趣使然的程序员，对新的技术和标准保持关注，有些开源精神，做过一些web和app项目，在项目中负责前端技术架构和交互设计.</p>
+			</div>
+			<div class="skillBiased">
+				<div class="col-lg-4">
+					<span>C语言:</span>
+					<div class="skillData">
+						<div style="width: 60%;">掌握</div>
+					</div>
+					<span>数据结构:</span>
+					<div class="skillData">
+						<div style="width: 60%;">掌握</div>
+					</div>
+					<span>JavaScript:</span>
+					<div class="skillData">
+						<div style="width: 85%;">精通</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<span>Html5:</span>
+					<div class="skillData">
+						<div style="width: 70%;">熟练</div>
+					</div>
+					<span>Css3:</span>
+					<div class="skillData">
+						<div style="width: 70%;">熟练</div>
+					</div>
+					<span>Node.js:</span>
+					<div class="skillData">
+						<div style="width: 60%;">掌握</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<span>Java:</span>
+					<div class="skillData">
+						<div style="width: 60%;">掌握</div>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class="campus">
+				<h4>2015-09-2017-10</h4>
+				<p>做了一些项目，项目地址在，项目经验中</p>
+			</div>
+			<div class="project">
+				<ul>
+					<li>https://github.com/LearGroup/campus-community-project/tree/appFront</li>
+					<li>https://github.com/sadofriod/belong-to-me</li>
+				</ul>
+			</div>
+			<div class="education">
+				<h4>2015-09-2017-10</h4>
+				<p>主修课程:<br />面向对象程序设计、数据结构、操作系统、计算机原理、离散数学、数据库(mysql)、web编程、java高级 </p>
+			</div>
+			<p style="text-align: center;padding-top: 10px; border-top: 2px solid #31B0D5;">
+				<a href="https://github.com/sadofriod/belong-to-me">https://github.com/sadofriod/belong-to-me</a>
+			</p>
+
 		</div>
 		<div class="maskBg"></div>
 	</body>
 	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script>
 		var height = $(window).height();
 		var width = $(window).width();
@@ -108,12 +194,13 @@
 			height: height,
 			width: width
 		})
-		var setInit = function(){
+		var setInit = function() {
 			$('.item').css({
-				top:height/2,
-				right:width/2
+				top: height / 2,
+				right: width / 2
 			})
 		}()
+
 		function draw(rote) { //获取元素坐标
 			var y = (height - 80) / 2;
 			//圆心纵坐标
@@ -136,24 +223,54 @@
 			var r = draw(k);
 			$(roll[i1]).show(250);
 			$(roll[i1]).animate({
-				top:r.y1,
-				right:r.x1
-			},260)
-			k+=60;
+				top: r.y1,
+				right: r.x1
+			}, 260)
+			k += 60;
 			i1++;
-			if(i1 > 6){
+			if(i1 > 6) {
 				clearInterval(flag1);
 				return;
 			}
 		}, 450);
-		$('.container').on('click','.item',function(e){
+		$('.container').on('click', '.item', function(e) {
 			$('.maskBg').show();
-			$('.mask').show(200)
+			$('.mask').show(200);
+			if($(this).attr('data-toggle') == 0) {
+				$('.mask').find('h2').html('个人介绍');
+				$('.mask > div').hide();
+				$('.personalIntroduction').show();
+			}
+			else if($(this).attr('data-toggle') == 5) {
+				$('.mask').find('h2').html('自我评价');
+				$('.mask > div').hide();
+				$('.selfAssessment').show();
+			}
+			else if($(this).attr('data-toggle') == 4) {
+				$('.mask').find('h2').html('技能偏向');
+				$('.mask > div').hide();
+				$('.skillBiased').show();
+			}
+			else if($(this).attr('data-toggle') == 3) {
+				$('.mask').find('h2').html('校园经历');
+				$('.mask > div').hide();
+				$('.campus').show();
+			}
+			else if($(this).attr('data-toggle') == 2) {
+				$('.mask').find('h2').html('项目经验');
+				$('.mask > div').hide();
+				$('.project').show();
+			}
+			else{
+				$('.mask').find('h2').html('教育背景');
+				$('.mask > div').hide();
+				$('.education').show();
+			}
 		})
-		$('.maskBg').click(function(){
+		$('.maskBg').click(function() {
 			$('.mask').hide(200)
-			setTimeout($(this).hide(),210)
-			
+			setTimeout($(this).hide(), 210)
+
 		})
 	</script>
 
