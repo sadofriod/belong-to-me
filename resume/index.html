@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
@@ -21,6 +22,13 @@
 				font-family: "微软雅黑";
 				color: #269ABC;
 				line-height: 120px;
+			}
+			.item:hover{
+				background-color: rgba(49,176,213,.25);
+			}
+			.resume {
+				display: block !important;
+				box-shadow: 0px 0px 10px #ccc8c8;
 			}
 			
 			.mask {
@@ -67,16 +75,19 @@
 			.leftData {
 				border-left: 1px solid #31B0D5;
 			}
-			.selfAssessment{
+			
+			.selfAssessment {
 				display: none;
 			}
-			.skillData{
+			
+			.skillData {
 				height: 20px;
 				width: 65%;
 				border-radius: 20px;
-				border: 1px solid rgba(49,176,213,.25);
+				border: 1px solid rgba(49, 176, 213, .25);
 			}
-			.skillData div{
+			
+			.skillData div {
 				background-color: #31B0D5;
 				border-radius: 20px;
 				height: 100%;
@@ -84,8 +95,13 @@
 				padding-right: 10px;
 				color: #FFFFFF;
 			}
-			.skillBiased{display: none;margin-bottom: 10px;}
-			.skillBiased span{
+			
+			.skillBiased {
+				display: none;
+				margin-bottom: 10px;
+			}
+			
+			.skillBiased span {
 				font-size: 1.2em;
 				font-family: "微软雅黑";
 				margin-bottom: 5%;
@@ -102,6 +118,7 @@
 			<div class="item" data-toggle="3">校园经历</div>
 			<div class="item" data-toggle="4">技能偏向</div>
 			<div class="item" data-toggle="5">自我评价</div>
+			<div class="item resume">简历</div>
 		</div>
 		<div class="mask">
 			<h2 style="color: #31B0D5;padding-bottom: 10px; border-bottom: 2px solid #31B0D5;">个人介绍</h2>
@@ -170,8 +187,12 @@
 			</div>
 			<div class="project">
 				<ul>
-					<li>https://github.com/LearGroup/campus-community-project/tree/appFront</li>
-					<li>https://github.com/sadofriod/belong-to-me</li>
+					<li>
+						<a href="https://github.com/LearGroup/campus-community-project/tree/appFront">https://github.com/LearGroup/campus-community-project/tree/appFront</a>
+					</li>
+					<li>
+						<a href="https://github.com/sadofriod/belong-to-me">https://github.com/sadofriod/belong-to-me</a>
+					</li>
 				</ul>
 			</div>
 			<div class="education">
@@ -194,17 +215,17 @@
 			height: height,
 			width: width
 		})
-		var setInit = function() {
+		var setInit = function() { //模块位置初始化
 			$('.item').css({
-				top: height / 2,
-				right: width / 2
+				top: (height - 80) / 2,
+				right: (width -80) / 2
 			})
 		}()
 
 		function draw(rote) { //获取元素坐标
 			var y = (height - 80) / 2;
 			//圆心纵坐标
-			var x = width / 2;
+			var x = (width - 80) / 2;
 			//圆心横坐标
 			var r = (height - 120) / 2;
 			//半径
@@ -221,6 +242,10 @@
 		var k = 0; //起始旋转角度
 		var flag1 = setInterval(function() {
 			var r = draw(k);
+			if(i1 > 5) {
+				clearInterval(flag1);
+				return;
+			}
 			$(roll[i1]).show(250);
 			$(roll[i1]).animate({
 				top: r.y1,
@@ -228,43 +253,56 @@
 			}, 260)
 			k += 60;
 			i1++;
-			if(i1 > 6) {
-				clearInterval(flag1);
-				return;
-			}
+
 		}, 450);
 		$('.container').on('click', '.item', function(e) {
-			$('.maskBg').show();
-			$('.mask').show(200);
+			if($(this).attr('class') == 'item') {
+				$('.maskBg').show();
+				$('.mask').show(200);
+			}
 			if($(this).attr('data-toggle') == 0) {
 				$('.mask').find('h2').html('个人介绍');
 				$('.mask > div').hide();
 				$('.personalIntroduction').show();
-			}
-			else if($(this).attr('data-toggle') == 5) {
+			} else if($(this).attr('data-toggle') == 5) {
 				$('.mask').find('h2').html('自我评价');
 				$('.mask > div').hide();
 				$('.selfAssessment').show();
-			}
-			else if($(this).attr('data-toggle') == 4) {
+			} else if($(this).attr('data-toggle') == 4) {
 				$('.mask').find('h2').html('技能偏向');
 				$('.mask > div').hide();
 				$('.skillBiased').show();
-			}
-			else if($(this).attr('data-toggle') == 3) {
+			} else if($(this).attr('data-toggle') == 3) {
 				$('.mask').find('h2').html('校园经历');
 				$('.mask > div').hide();
 				$('.campus').show();
-			}
-			else if($(this).attr('data-toggle') == 2) {
+			} else if($(this).attr('data-toggle') == 2) {
 				$('.mask').find('h2').html('项目经验');
 				$('.mask > div').hide();
 				$('.project').show();
-			}
-			else{
+			} else if($(this).attr('data-toggle') == 1) {
 				$('.mask').find('h2').html('教育背景');
 				$('.mask > div').hide();
 				$('.education').show();
+			} else {
+				return
+			}
+		})
+		$('.container').on('mouseenter', '.item', function(e) {
+			if($(this).attr('data-toggle') == 0) {
+				$('.resume').html('个人介绍');
+			} else if($(this).attr('data-toggle') == 5) {
+				$('.resume').html('自我评价');
+			} else if($(this).attr('data-toggle') == 4) {
+				$('.resume').html('技能偏向');
+			} else if($(this).attr('data-toggle') == 3) {
+				$('.resume').html('校园经历');
+			} else if($(this).attr('data-toggle') == 2) {
+				$('.resume').html('项目经验');
+			} else if($(this).attr('data-toggle') == 1) {
+				$('.resume').html('教育背景');
+			} else {
+				return
 			}
 		})
 		$('.maskBg').click(function() {
