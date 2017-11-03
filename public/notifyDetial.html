@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		
+	</head>
+
+	<body style="background-color: #FFFFFF;">
+		<header class="mui-bar mui-bar-nav" style="background-color: #5DA0C6; color: #FFFFFF;">
+			<p class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></p>
+			<h1 class="mui-title" style="color: #FFFFFF;">消息通知</h1>
+		</header>
+
+		<div style="position: relative;top: 50px;">
+			<div style="border-bottom:1px solid rgba(34,34,34,.25) ;">
+				<img class="mui-media-object mui-pull-left head-img" id="head-img" src="images/user-photo.png" width="40px" height="40px" style="margin-left: 10px; margin-right: 10px;">
+				<div class="mui-media-body" style="width: 60%; float: left;">
+					<span>时之沙管理员</span> 
+					<p class='mui-ellipsis'>账号:888888</p>
+				</div>
+				<button id="eye" style="float: right;margin-right: 10px;">关注+</button>
+				<div style="clear: both;"></div>
+			</div>
+			<p id="detial" style="padding: 8px; color: #000000; font-size: 20px;">您申请参与的XX活动，已接受你的请求，请于2017-xx-xx到xxx报道</p>
+			<br />
+			<div style="position: relative;bottom: 0px;right: 0px;border-top: 1px solid rgba(34,34,34,.25); width: 100%;">
+				<p style="padding: 8px; font-size: 18px; text-align: right;font-style: italic;">for you</p>
+			</div>
+			
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.plusReady(function(){
+			var self = plus.webview.currentWebview();
+			document.getElementById('detial').innerHTML = self.word
+		})
+	</script>
+
+</html>

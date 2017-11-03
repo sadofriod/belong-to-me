@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-media-object {
+				border-radius: 50%;
+				border: 1px solid rgba(34, 34, 34, .25);
+				width: 42px;
+				height: 42px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的活动</h1>
+		</header>
+		<div class="mui-content">
+			<ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-yellow">评分</a>
+					</div>
+					<div class="mui-slider-handle">
+						<img class="mui-media-object mui-pull-left" src="images/qq.png">
+						<div class="mui-media-body">
+							话剧活动
+							<p class='mui-ellipsis'>有人想来参加话剧团吗，释放内心的自己展现自己</p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-yellow">评分</a>
+					</div>
+					<div class="mui-slider-handle">
+						<img class="mui-media-object mui-pull-left" src="images/download.jpg">
+						<div class="mui-media-body">
+							网球活动
+							<p class='mui-ellipsis'>在内蒙古工业大学金川校区的网球活动，来人呐！</p>
+
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-yellow">评分</a>
+					</div>
+					<div class="mui-slider-handle">
+						<img class="mui-media-object mui-pull-left" src="images/football.jpg">
+						<div class="mui-media-body">
+							足球
+							<p class='mui-ellipsis'>有人来踢足球吗? 友谊球赛</p>
+
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+				(function($) {
+					//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+					$('#OA_task_1').on('tap', '.mui-btn', function(event) {
+						$.openWindow({
+							url:'feedback.html',
+							id:'feedback'
+						})
+					});
+					
+					$('ul').on('tap', 'li', function() {
+						
+						mui.openWindow({
+							url: 'detailed.html',
+							id: 'detailed',
+							
+						})
+					})
+				})
+		</script>
+	</body>
+
+</html>

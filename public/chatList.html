@@ -26,8 +26,8 @@
 					<div class="mui-slider-handle">
 						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg">
 						<div class="mui-media-body">
-							幸福
-							<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+							报名成功！
+							<p class='mui-ellipsis'>您的申请，话剧社团活动的发起者正在审核请等待回复</p>
 
 						</div>
 					</div>
@@ -39,8 +39,8 @@
 					<div class="mui-slider-handle">
 						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg">
 						<div class="mui-media-body">
-							幸福
-							<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+							申请通过！
+							<p class='mui-ellipsis'>您报名参加的兼职活动，已经通过了创建者或活动管理者的审核请在指定时间参加活动</p>
 
 						</div>
 					</div>
@@ -52,8 +52,8 @@
 					<div class="mui-slider-handle">
 						<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg">
 						<div class="mui-media-body">
-							幸福
-							<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+							人数已满
+							<p class='mui-ellipsis'>您报名参加的足球活动人数已满</p>
 
 						</div>
 					</div>
@@ -61,6 +61,7 @@
 			</ul>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript">
 			mui.init()
 				(function($) {
@@ -79,6 +80,19 @@
 						});
 					});
 					var btnArray = ['确认', '取消'];
+					$('ul').on('tap', 'li', function() {
+						var new_show = plus.webview.getWebviewById('new_show');
+						new_show.evalJS('document.getElementById("badge").style.display = "none"');
+						var word = jQuery(this).find('p').html();
+						console.log(word);
+						mui.openWindow({
+							url: 'notifyDetial.html',
+							id: 'notifyDetial',
+							extras:{
+								word:word
+							}
+						})
+					})
 				})
 		</script>
 	</body>

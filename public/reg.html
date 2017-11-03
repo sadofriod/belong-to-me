@@ -76,6 +76,7 @@
 			(function($, doc) {
 				$.init();
 				$.plusReady(function() {
+					plus.get
 					var settings = app.getSettings();
 					var regButton = doc.getElementById('reg');
 					var accountBox = doc.getElementById('account');
@@ -89,17 +90,17 @@
 							email: emailBox.value
 						};
 						console.log(regInfo.account+'  '+regInfo.password+'  '+regInfo.email)
-						mui.ajax('http://www.yxz107.cn/register.php', {
+						mui.ajax('http://www.yxz107.cn/userRegister.php', {
 							data: {
 								user_name: regInfo.account,
 								user_password: regInfo.password,
 								user_email: regInfo.email
 							},
-							dataType: 'jsonp',
+							dataType: 'json',
 							type: 'post',
 							timeout: 10000,
 							headers: {
-								'Content-Type': 'application/jsonp'
+								'Content-Type': 'application/json'
 							},
 							success: function(data) {
 								console.log(data)

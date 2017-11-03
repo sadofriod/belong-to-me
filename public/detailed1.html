@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/icons-extra.css" />
+		<style>
+			.mui-card-content img {
+				margin: 5px;
+				max-width: 100%;
+				max-height: 150px;
+			}
+			
+			.mui-card {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+			
+			#expandMore {
+				cursor: pointer;
+			}
+			
+			#briefInfo {
+				height: 20px;
+				overflow: hidden;
+			}
+			
+			p.text {
+				border: 1px solid rgba(232, 232, 232, 0.75);
+			}
+			.commentBox{
+				padding: 1%;
+				height: auto !important; 
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+				background-color: #FFFFFF;
+				display: flex;
+				box-shadow: 0px 0px 5px rgba(34,34,34,.25);
+			} 
+			.comment {
+				border:1px solid rgba(34,34,34,.25);
+				border-radius:5px ;
+				color: #8f8f94;
+				width: 80% !important;
+
+			}
+			.commentBox button{
+				height: 40px;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background-color: #5DA0C6;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;"></a>
+			<h1 class="mui-title" style="color: #FFFFFF;">详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media">
+					<img id="user" src="img/11e68b32340551721a791252e9b9b0ab.jpg" />
+					<div class="mui-media-body">
+						<span id="userName"></span>
+						<p id="time">发表于 2016-06-30 15:30</p>
+					</div>
+					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
+					<h2>小M</h2>
+					<p>发表于 2016-06-30 15:30</p>-->
+				</div>
+				<div class="mui-card-content">
+					<img id="pic" src="" style="max-height: 220px;" />
+					<div class="mui-card-content-inner">
+						<p id="context" style="color: #333333;">这里显示兼职主要内容，如让有需要的人明白兼职的时间，工资，兼职地点，等等一系列详细情况</p>
+				</div>
+				<div class="mui-card-footer">
+					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
+						20/55人</span>
+					</a>
+
+					<a class="mui-card-link"><span class="mui-icon mui-icon-eye">
+					</span></a>
+				</div>
+			</div>
+			<div style="padding: 5px;background-color: #FFFFFF;">
+				<span>他点了赞：&ensp;</span><p><a>罗辑&ensp;</a>、<a>柳舒眉&ensp;</a>、<a>赵云纺&ensp;</a></p>
+			</div>
+			<h4 style="border-bottom: 1px solid rgba(34,34,34,.25);">评论：</h4>
+			<div class="commentDetialBox" style="padding: 10px;">
+				
+				
+			</div>
+			<div style="height: 60px;"></div>
+			<div class="commentBox">
+				<input class="comment" type="text" placeholder="发表你的看法" />
+				<button id="submit">发表</button>
+			</div>
+			<div class="mui-off-canvas-backdrop"></div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var src = self.picSrc;
+				var name = self.name;
+				var time = self.time;
+				var pic = self.pic
+				document.getElementById('user').setAttribute('src', src);
+				document.getElementById('userName').innerHTML = name;
+				document.getElementById('pic').setAttribute('src', pic);
+				document.getElementById('time').innerHTML = time;
+				document.getElementById('context').innerHTML = self.context;
+				document.getElementById('user').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'chat.html',
+						id: 'chat.html'
+					})
+				})
+			})
+			$('#submit').click(function(){
+				if($('.comment').val()!=null)
+				$('.commentDetialBox').append('<div class="commentItem"><a>杜士华:</a>'+$('.comment').val()+'</div>'); 
+				$('.comment').val(null)
+			})
+		</script>
+	</body>
+
+</html>

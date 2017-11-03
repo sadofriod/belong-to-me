@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			* {
+				background-color: #FFFFFF;
+				overflow: hidden;
+			}
+			
+			.container {
+				margin-top: 44px;
+			}
+			
+			.topBox {
+				padding: 10px;
+				height: 50%;
+				box-shadow: 0px 0px 10px rgba(34, 34, 34, .25);
+			}
+			
+			.topBox span {
+				color: #222222;
+				font-family: "微软雅黑";
+			}
+			
+			.time {
+				height: 50%;
+				border-bottom: 1px solid rgba(34, 34, 34, .25);
+				font-size: 18px;
+			}
+			
+			.activeWord {
+				font-size: 18px;
+				position: relative;
+				display: block;
+				height: 45%;
+			}
+			
+			.bottomBox {
+				height: 48%;
+				margin-top: 10px;
+				overflow-x: scroll;
+			}
+			
+			.item {
+				height: 96%;
+				margin-top: 2%;
+				width: 18%;
+				float: left;
+				margin-left: 1.7%;
+				border-radius: 5px;
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
+				text-align: center;
+				position: relative;
+				color: #8f8f94;
+				padding-top: 10px;
+				box-shadow: 0px 0px 8px rgba(34, 34, 34, .25);
+			}
+			
+			.active {
+				box-shadow: 0px 0px 10px rgba(49, 181, 208, .55);
+				border-bottom: 5px solid #31B0D5;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的规划</h1>
+		</header>
+		<div class="container">
+			<div class="topBox">
+				<p class="time">
+					今日：<span>10:30~12:00，16:00~18:00无课</span>
+				</p>
+				<p class="activeWord">
+					为您推荐:<span>话剧社团、网球等活动</span>
+					<button id="close" style="position: absolute;bottom: 0px;right: 10px;">查看详情</button>
+				</p>
+			</div>
+			<div class="bottomBox">
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.plusReady(function() {
+			var height = plus.display.resolutionHeight;
+			document.querySelector('.container').style.height = height - 44 + 'px'
+			var d = new Date();
+			var word = ['话剧', '网球', '科普', '狼人杀', '足球', '篮球'];
+			for(var i = 0; i < 5; i++) {
+				if(i == 0) {
+					$('.bottomBox').append('<div class="item active">星期' + d.getDay() + '<br><br><br>今日<br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
+				} else {
+					if((d.getDay() + i) <= 7)
+						$('.bottomBox').append('<div class="item">星期' + (d.getDay() + i) + '<br><br><br><br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
+					else
+						$('.bottomBox').append('<div class="item">星期' + (d.getDay() + i - 7) + '<br><br><br><br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
+				}
+
+			}
+			document.getElementById('close').addEventListener('click', function() {
+				var new_show = plus.webview.getWebviewById('new_show');
+				new_show.evalJS('plus.webview.show(subpages[1])');
+				mui.back();
+			});
+		})
+	</script>
+
+</html>

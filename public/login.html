@@ -126,7 +126,7 @@
 	<body>
 		<div class="container">
 			<div class="login-pro">
-				<h1>Discover Your<br /> True Self</h1>
+				<h1>Make More<br />Time</h1>
 				<button id='show-login' class="mui-btn mui-btn-primary">Sign in</button>
 				<button id='go-reg' class="mui-btn mui-btn-primary">Sign up</button>
 				<button id='come-in' class="mui-btn mui-btn-primary">Direct Access</button>
@@ -193,8 +193,8 @@
 					var settings = app.getSettings();
 					var state = app.getState();
 					var mainPage = $.preload({
-						"id": 'new_show',
-						"url": 'new_show.html'
+						"id": 'guide',
+						"url": 'guide.html'
 					});
 					jQuery('#show-login').on('click', function(e) {
 						jQuery('.container').fadeOut(300);
@@ -215,7 +215,7 @@
 						$.fire(mainPage, 'show', null);
 						setTimeout(function() {
 							$.openWindow({
-								id: 'new_show',
+								id: 'guide',
 								show: {
 									aniShow: 'fade-in'
 								},
@@ -223,9 +223,9 @@
 									autoShow: false
 								}
 							});
-//							var second = plus.webview.getWebviewById('new_show');
-//							console.log(second)
-//							second.evalJS("plus.navigator.getStatusBarBackground('#5DA0C6')")
+							//							var second = plus.webview.getWebviewById('new_show');
+							//							console.log(second)
+							//							second.evalJS("plus.navigator.getStatusBarBackground('#5DA0C6')")
 							plus.navigator.setStatusBarBackground('#5DA0C6');
 
 						}, 0);
@@ -234,8 +234,14 @@
 					if(settings.autoLogin && state.token) {
 						doc.getElementById('show-login').addEventListener('tap', toMain)
 					}
-					doc.getElementById('come-in').addEventListener('tap', toMain)
-					$('#come-in').on('tap', toMain);
+					doc.getElementById('come-in').addEventListener('tap', function() {
+						$.openWindow({
+							url: 'new_show.html',
+							id: 'new_show'
+						})
+						plus.navigator.setStatusBarBackground('#5DA0C6');
+					})
+					//					$('#come-in').on('tap',	});
 					var loginButton = doc.getElementById('login');
 					var accountBox = doc.getElementById('account');
 					var passwordBox = doc.getElementById('password');
@@ -248,13 +254,33 @@
 							account: accountBox.value,
 							password: passwordBox.value
 						};
-						app.login(loginInfo, function(err) {
-							if(err) {
-								plus.nativeUI.toast(err);
-								return;
+						mui.ajax('http://www.yxz107.cn/login.php', {
+							data: {
+								user_name: loginInfo.account,
+								user_password: loginInfo.password
+							},
+							dataType: 'json',
+							type: 'post',
+							timeout: 10000,
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							success: function(data) {
+								console.log(data);
+								toMain();
+							},
+							error: function(xhr, type, errorThrown) {
+								//异常处理；
+								console.log(type + '   ' + xhr + '   ' + errorThrown);
 							}
-							toMain();
-						});
+						})
+						//						app.login(loginInfo, function(err) {
+						//							if(err) {
+						//								plus.nativeUI.toast(err);
+						//								return;
+						//							}
+						//							toMain();
+						//						});
 					});
 					$.enterfocus('#login-form input', function() {
 						$.trigger(loginButton, 'tap');
@@ -320,7 +346,7 @@
 					var backButtonPress = 0;
 					$.back = function(event) {
 						backButtonPress++;
-						
+
 						if(backButtonPress > 1) {
 							plus.runtime.quit();
 						} else {

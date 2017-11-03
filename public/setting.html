@@ -14,6 +14,7 @@
 			body {
 				background-color: #efeff4;
 			}
+			
 			.mui-views,
 			.mui-view,
 			.mui-pages,
@@ -28,26 +29,32 @@
 				height: 100%;
 				background-color: #efeff4;
 			}
+			
 			.mui-pages {
 				top: 46px;
 				height: auto;
 			}
+			
 			.mui-scroll-wrapper,
 			.mui-scroll {
 				background-color: #efeff4;
 			}
+			
 			.mui-page.mui-transitioning {
 				-webkit-transition: -webkit-transform 300ms ease;
 				transition: transform 300ms ease;
 			}
+			
 			.mui-page-left {
 				-webkit-transform: translate3d(0, 0, 0);
 				transform: translate3d(0, 0, 0);
 			}
+			
 			.mui-ios .mui-page-left {
 				-webkit-transform: translate3d(-20%, 0, 0);
 				transform: translate3d(-20%, 0, 0);
 			}
+			
 			.mui-navbar {
 				position: fixed;
 				right: 0;
@@ -56,29 +63,35 @@
 				height: 44px;
 				background-color: #f7f7f8;
 			}
+			
 			.mui-navbar .mui-bar {
 				position: absolute;
 				background: transparent;
 				text-align: center;
 			}
+			
 			.mui-android .mui-navbar-inner.mui-navbar-left {
 				opacity: 0;
 			}
+			
 			.mui-ios .mui-navbar-left .mui-left,
 			.mui-ios .mui-navbar-left .mui-center,
 			.mui-ios .mui-navbar-left .mui-right {
 				opacity: 0;
 			}
+			
 			.mui-navbar .mui-btn-nav {
 				-webkit-transition: none;
 				transition: none;
 				-webkit-transition-duration: .0s;
 				transition-duration: .0s;
 			}
+			
 			.mui-navbar .mui-bar .mui-title {
 				display: inline-block;
 				width: auto;
 			}
+			
 			.mui-page-shadow {
 				position: absolute;
 				right: 100%;
@@ -88,27 +101,34 @@
 				z-index: -1;
 				content: '';
 			}
+			
 			.mui-page-shadow {
 				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
 				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
 			}
+			
 			.mui-navbar-inner.mui-transitioning,
 			.mui-navbar-inner .mui-transitioning {
 				-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
 				transition: opacity 300ms ease, transform 300ms ease;
 			}
+			
 			.mui-page {
 				display: none;
 			}
+			
 			.mui-pages .mui-page {
 				display: block;
 			}
+			
 			.mui-page .mui-table-view:first-child {
 				margin-top: 15px;
 			}
+			
 			.mui-page .mui-table-view:last-child {
 				margin-bottom: 30px;
 			}
+			
 			.mui-table-view {
 				margin-top: 20px;
 			}
@@ -116,24 +136,30 @@
 			.mui-table-view span.mui-pull-right {
 				color: #999;
 			}
+			
 			.mui-table-view-divider {
 				background-color: #efeff4;
 				font-size: 14px;
 			}
+			
 			.mui-table-view-divider:before,
 			.mui-table-view-divider:after {
 				height: 0;
 			}
+			
 			.head {
 				height: 40px;
 			}
+			
 			#head {
 				line-height: 40px;
 			}
+			
 			.head-img {
 				width: 40px;
 				height: 40px;
 			}
+			
 			#head-img1 {
 				position: absolute;
 				bottom: 10px;
@@ -141,33 +167,54 @@
 				width: 40px;
 				height: 40px;
 			}
+			
 			.update {
 				font-style: normal;
 				color: #999999;
 				margin-right: -25px;
 				font-size: 15px
 			}
+			
 			.mui-fullscreen {
 				position: fixed;
 				z-index: 20;
 				background-color: #000;
 			}
+			
 			.mui-ios .mui-navbar .mui-bar .mui-title {
 				position: static;
-				
 			}
 			/*问题反馈在setting页面单独的css*/
-			#feedback .mui-popover{
+			
+			#feedback .mui-popover {
 				position: fixed;
 			}
+			
 			#feedback .mui-table-view:last-child {
-			    margin-bottom: 0px;
+				margin-bottom: 0px;
 			}
+			
 			#feedback .mui-table-view:first-child {
-			    margin-top: 0px;
+				margin-top: 0px;
+			}
+			
+			.skillData {
+				height: 16px;
+				width: 65%;
+				border-radius: 20px;
+				border: 1px solid rgba(49, 176, 213, .25);
+				font-size: 12px;
+			}
+			
+			.skillData div {
+				background-color: #31B0D5;
+				border-radius: 20px;
+				height: 100%;
+				text-align: right;
+				padding-right: 10px;
+				color: #FFFFFF;
 			}
 			/*问题反馈在setting页面单独的css==end*/
-			
 		</style>
 		<link rel="stylesheet" type="text/css" href="css/feedback.css" />
 	</head>
@@ -206,6 +253,21 @@
 										<p class='mui-ellipsis'>账号:793634614</p>
 									</div>
 								</a>
+								<div>
+									<div class="mui-col-xs-6 mui-col-sm-6" style="display: flex;float: left;">
+										<span style="font-size:14px ;">领导值:</span>
+										<div class="skillData">
+											<div style="width: 60%;">60分</div>
+										</div>
+									</div>
+									<div class="mui-col-xs-6 mui-col-sm-6" style="display: flex;float: left;">
+										<span style="font-size:14px ;">参与度:</span>
+										<div class="skillData">
+											<div style="width: 60%;">60分</div>
+										</div>
+									</div>
+								</div>
+
 							</li>
 						</ul>
 						<ul class="mui-table-view mui-table-view-chevron">
@@ -215,13 +277,22 @@
 						</ul>
 						<ul class="mui-table-view mui-table-view-chevron">
 							<li class="mui-table-view-cell">
+								<a id="myTime" class="mui-navigate-right">我的时间</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="createActive" class="mui-navigate-right">创建活动</a>
+							</li>
+							<li class="mui-table-view-cell">
 								<a href="#notifications" class="mui-navigate-right">新消息通知</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a href="#privacy" class="mui-navigate-right">隐私</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a href="#general" class="mui-navigate-right">通用</a>
+								<a id="active" class="mui-navigate-right">我的活动</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a id="personal" class="mui-navigate-right">个人定制</a>
 							</li>
 						</ul>
 						<ul class="mui-table-view mui-table-view-chevron">
@@ -253,16 +324,28 @@
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<a id="head" class="mui-navigate-right">头像
-								<span class="mui-pull-right head">
+									<span class="mui-pull-right head">
 									<img class="head-img mui-action-preview" id="head-img1" src=""/>
 								</span>
-							</a>
+								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a>姓名<span class="mui-pull-right">Hbuilder</span></a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a>HBuilder账号<span class="mui-pull-right">hbuilder@dcloud.io</span></a>
+							</li>
+							<li class="mui-table-view-cell" style="display: flex;">
+								<span style="font-size:14px ;">领导值：</span>
+								<div class="skillData">
+									<div style="width: 60%;">60</div>
+								</div>
+							</li>
+							<li class="mui-table-view-cell" style="display: flex;">
+								<span style="font-size:14px ;">参与度：</span>
+								<div class="skillData">
+									<div style="width: 60%;">60</div>
+								</div>
 							</li>
 						</ul>
 						<ul class="mui-table-view">
@@ -517,10 +600,18 @@
 									<li class="mui-table-view-cell stream">
 										<a href="#">桌面快捷方式创建失败</a>
 									</li>
-									<li class="mui-table-view-cell"><a href="#">界面显示错乱</a></li>
-									<li class="mui-table-view-cell"><a href="#">启动缓慢，卡出翔了</a></li>
-									<li class="mui-table-view-cell"><a href="#">偶发性崩溃</a></li>
-									<li class="mui-table-view-cell"><a href="#">UI无法直视，丑哭了</a></li>
+									<li class="mui-table-view-cell">
+										<a href="#">界面显示错乱</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">启动缓慢，卡出翔了</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">偶发性崩溃</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#">UI无法直视，丑哭了</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -562,11 +653,11 @@
 		mui('.mui-scroll-wrapper').scroll();
 		//分享操作
 		var shares = {};
-		
+
 		mui.plusReady(function() {
 			plus.share.getServices(function(s) {
-				if (s && s.length > 0) {
-					for (var i = 0; i < s.length; i++) {
+				if(s && s.length > 0) {
+					for(var i = 0; i < s.length; i++) {
 						var t = s[i];
 						shares[t.id] = t;
 					}
@@ -575,14 +666,14 @@
 				console.log("获取分享服务列表失败");
 			});
 		});
-		
-		setTimeout(function () {
+
+		setTimeout(function() {
 			defaultImg();
 			setTimeout(function() {
 				initImgPreview();
 			}, 300);
-		},500);
-		
+		}, 500);
+
 		//分享链接点击事件
 		document.getElementById("share").addEventListener('tap', function() {
 			var ids = [{
@@ -614,11 +705,11 @@
 				buttons: bts
 			}, function(e) {
 				var i = e.index;
-				if (i > 0) {
+				if(i > 0) {
 					var s_id = ids[i - 1].id;
 					var share = shares[s_id];
-					if (share) {
-						if (share.authenticated) {
+					if(share) {
+						if(share.authenticated) {
 							shareMessage(share, ids[i - 1].ex);
 						} else {
 							share.authorize(function() {
@@ -643,7 +734,7 @@
 			msg.href = "http://www.dcloud.io/hellomui/";
 			msg.title = "最接近原生APP体验的高性能前端框架";
 			msg.content = "我正在体验HelloMUI，果然很流畅，基本看不出和原生App的差距";
-			if (~share.id.indexOf('weibo')) {
+			if(~share.id.indexOf('weibo')) {
 				msg.content += "；体验地址：http://www.dcloud.io/hellomui/";
 			}
 			msg.thumbs = ["_www/images/logo.png"];
@@ -654,25 +745,25 @@
 			});
 		}
 		//去评分
-//		document.getElementById("rate").addEventListener('tap', function() {
-//			if (mui.os.ios) {
-//				location.href = 'https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=682211190&pageNumber=0&sortOrdering=2&type=&mt=8';
-//			} else if (mui.os.android) {
-//				plus.runtime.openURL("market://details?id=io.dcloud.HelloMUI", function(e) {
-//					plus.runtime.openURL("market://details?id=io.dcloud.HelloMUI", function(e) {
-//						mui.alert("360手机助手和应用宝，你一个都没装，暂时无法评分，感谢支持");
-//					}, "com.qihoo.appstore");
-//				}, "com.tencent.android.qqdownloader");
-//			}
-//		});
+		//		document.getElementById("rate").addEventListener('tap', function() {
+		//			if (mui.os.ios) {
+		//				location.href = 'https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=682211190&pageNumber=0&sortOrdering=2&type=&mt=8';
+		//			} else if (mui.os.android) {
+		//				plus.runtime.openURL("market://details?id=io.dcloud.HelloMUI", function(e) {
+		//					plus.runtime.openURL("market://details?id=io.dcloud.HelloMUI", function(e) {
+		//						mui.alert("360手机助手和应用宝，你一个都没装，暂时无法评分，感谢支持");
+		//					}, "com.qihoo.appstore");
+		//				}, "com.tencent.android.qqdownloader");
+		//			}
+		//		});
 		//客服电话
 		document.getElementById("tel").addEventListener('tap', function() {
-			if(mui.os.plus){
+			if(mui.os.plus) {
 				plus.device.dial("114");
-			}else{
+			} else {
 				location.href = 'tel:114';
 			}
-			
+
 		});
 		//		//意见反馈
 		//		document.getElementById("quest").addEventListener('tap', function() {
@@ -687,9 +778,9 @@
 				"version": plus.runtime.version,
 				"imei": plus.device.imei
 			}, function(data) {
-				if (data.status) {
+				if(data.status) {
 					plus.ui.confirm(data.note, function(i) {
-						if (0 == i) {
+						if(0 == i) {
 							plus.runtime.openURL(data.url);
 						}
 					}, data.title, ["立即更新", "取　　消"]);
@@ -703,7 +794,7 @@
 			//处理view的后退与webview后退
 			var oldBack = $.back;
 			$.back = function() {
-				if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
+				if(viewApi.canBack()) { //如果view可以后退，则执行view的后退
 					viewApi.back();
 				} else { //执行webview后退
 					oldBack();
@@ -726,7 +817,7 @@
 		})(mui);
 		//更换头像
 		mui(".mui-table-view-cell").on("tap", "#head", function(e) {
-			if(mui.os.plus){
+			if(mui.os.plus) {
 				var a = [{
 					title: "拍照"
 				}, {
@@ -737,7 +828,7 @@
 					cancel: "取消",
 					buttons: a
 				}, function(b) {
-					switch (b.index) {
+					switch(b.index) {
 						case 0:
 							break;
 						case 1:
@@ -749,9 +840,9 @@
 						default:
 							break
 					}
-				})	
+				})
 			}
-			
+
 		});
 
 		function getImage() {
@@ -823,7 +914,7 @@
 		};
 
 		function defaultImg() {
-			if(mui.os.plus){
+			if(mui.os.plus) {
 				plus.io.resolveLocalFileSystemURL("_doc/head.jpg", function(entry) {
 					var s = entry.fullPath + "?version=" + new Date().getTime();;
 					document.getElementById("head-img").src = s;
@@ -832,34 +923,34 @@
 					document.getElementById("head-img").src = '../images/logo.png';
 					document.getElementById("head-img1").src = '../images/logo.png';
 				})
-			}else{
+			} else {
 				document.getElementById("head-img").src = '../images/logo.png';
 				document.getElementById("head-img1").src = '../images/logo.png';
 			}
-			
+
 		}
 		document.getElementById("head-img1").addEventListener('tap', function(e) {
 			e.stopPropagation();
 		});
-//		document.getElementById("welcome").addEventListener('tap', function(e) {
-//			//显示启动导航
-//			mui.openWindow({
-//				id: 'guide',
-//				url: 'guide.html',
-//				show: {
-//					aniShow: 'fade-in',
-//					duration: 300
-//				},
-//				waiting: {
-//					autoShow: false
-//				}
-//			});
-//		});
+		//		document.getElementById("welcome").addEventListener('tap', function(e) {
+		//			//显示启动导航
+		//			mui.openWindow({
+		//				id: 'guide',
+		//				url: 'guide.html',
+		//				show: {
+		//					aniShow: 'fade-in',
+		//					duration: 300
+		//				},
+		//				waiting: {
+		//					autoShow: false
+		//				}
+		//			});
+		//		});
 
 		function initImgPreview() {
 			var imgs = document.querySelectorAll("img.mui-action-preview");
 			imgs = mui.slice.call(imgs);
-			if (imgs && imgs.length > 0) {
+			if(imgs && imgs.length > 0) {
 				var slider = document.createElement("div");
 				slider.setAttribute("id", "__mui-imageview__");
 				slider.classList.add("mui-slider");
@@ -895,11 +986,34 @@
 				var _slider = mui(slider).slider();
 			}
 		}
-		
-		if(mui.os.stream){
+
+		if(mui.os.stream) {
 			document.getElementById("check_update").display = "none";
 		}
-		
+		document.getElementById('personal').addEventListener('click', function() {
+						mui.openWindow({
+							url: 'guide.html',
+							id: 'guide'
+						})
+					})
+		document.getElementById('myTime').addEventListener('click', function() {
+						mui.openWindow({
+							url: 'timePlan.html',
+							id: 'timePlan'
+						})
+					})
+		document.getElementById('active').addEventListener('click', function() {
+						mui.openWindow({
+							url: 'activeList.html',
+							id: 'activeList'
+						})
+					})
+		document.getElementById('createActive').addEventListener('click', function() {
+						mui.openWindow({
+							url: 'createActive.html',
+							id: 'createActive'
+						})
+					})
 	</script>
 
 </html>

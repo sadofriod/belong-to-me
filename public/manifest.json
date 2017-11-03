@@ -5,7 +5,7 @@
 		"iPad"
 	],
 	"id": "H5AF22FA6",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "active",/*应用名称，程序桌面图标名称*/
+	"name": "Sands of Time",/*应用名称，程序桌面图标名称*/
 	
 	"version": {
 		"name": "1.0",/*应用版本名称*/
@@ -127,35 +127,7 @@
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包���用密钥库中证书的别名*/
 				"ImmersedeStatusbar": true,
-				"permissions": [
-					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
-					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
-					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
-					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
-					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
-					"<uses-permission  android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
-					"<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
-					"<uses-permission android:name=\"android.permission.CAMERA\"/>",
-					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
-					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
-					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
-					"<uses-permission android:name=\"android.permission.INTERNET\"/>",
-					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
-					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
-					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
-					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
-					"<uses-feature android:name=\"android.hardware.camera\"/>",
-					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-				]
+				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.GET_TASKS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission  android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
 			},
 			"orientation": [
 				"portrait-primary"
@@ -256,13 +228,15 @@
 					"js/login_custum.js",
 					"js/mui.enterfocus.js",
 					"img/login_background.png",
-					"js/jquery-2.1.0.js"
+					"js/jquery-2.1.0.js",
+					"fonts/mui.ttf"
 				],
 				"refer": [
 					"index.html",
 					"reg.html",
 					"forget_password.html",
-					"new_show.html"
+					"new_show.html",
+					"guide.html"
 				],
 				"priority": 0
 			},
@@ -310,13 +284,24 @@
 					"img/timg.png",
 					"img/carousel1.png",
 					"images/qq.png",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"img/122.png",
+					"images/download.jpg",
+					"img/123.png",
+					"images/301.jpg",
+					"images/langren.jpg",
+					"img/124.png",
+					"images/huaju.jpg",
+					"img/125.png",
+					"images/football.jpg"
 				],
 				"refer": [
 					"feedback.html",
 					"clockWork.html",
 					"detailed.html",
-					"chat.html"
+					"chat.html",
+					"detailed1.html",
+					"comment.html"
 				],
 				"priority": 0
 			},
@@ -358,9 +343,12 @@
 					"css/mui.min.css",
 					"img/26002.jpg",
 					"images/yuantiao.jpg",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"js/jquery-2.1.0.js"
 				],
-				"refer": [],
+				"refer": [
+					"notifyDetial.html"
+				],
 				"priority": 0
 			},
 			"chat.html": {
@@ -410,11 +398,20 @@
 					"img/carousel2.png",
 					"images/yuantiao.jpg",
 					"img/carousel1.png",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"images/map.JPG",
+					"img/1230.png",
+					"images/201.jpg",
+					"img/126.png",
+					"images/202.jpg",
+					"images/203.jpg",
+					"images/206.jpg",
+					"img/122.png"
 				],
 				"refer": [
 					"detailed.html",
-					"chat.html"
+					"chat.html",
+					"feedback.html"
 				],
 				"priority": 0
 			},
@@ -426,9 +423,29 @@
 					"fonts/mui.ttf",
 					"css/icons-extra.css",
 					"img/timg.png",
-					"img/carousel1.png"
+					"img/carousel1.png",
+					"images/yuantiao.jpg",
+					"images/qq.png",
+					"images/map.JPG",
+					"images/qihoo.png",
+					"img/122.png",
+					"images/download.jpg",
+					"img/123.png",
+					"images/huaju.jpg",
+					"images/201.jpg",
+					"img/126.png",
+					"images/203.jpg",
+					"images/206.jpg",
+					"img/1230.png",
+					"images/202.jpg",
+					"img/carousel2.png",
+					"img/124.png",
+					"images/football.jpg",
+					"js/jquery-2.1.0.js"
 				],
-				"refer": [],
+				"refer": [
+					"chat.html"
+				],
 				"priority": 0
 			},
 			"setting.html": {
@@ -441,7 +458,11 @@
 					"css/feedback.css",
 					"images/user-photo.png"
 				],
-				"refer": [],
+				"refer": [
+					"timePlan.html",
+					"activeList.html",
+					"createActive.html"
+				],
 				"priority": 0
 			},
 			"guide.html": {
@@ -451,7 +472,105 @@
 					"img/boy.png",
 					"img/girl.png",
 					"js/range.js",
-					"js/jquery-2.1.0.js"
+					"js/jquery-2.1.0.js",
+					"js/Carousel.js",
+					"images/user-photo.png",
+					"images/iconfont-tianjia.png",
+					"fonts/mui.ttf",
+					"img/imgitem/1.jpg",
+					"img/imgitem/3.jpg",
+					"img/imgitem/2.jpg",
+					"img/imgitem/12.jpg",
+					"img/imgitem/9.jpg",
+					"img/imgitem/7.jpg",
+					"img/imgitem/16.jpg",
+					"img/imgitem/14.jpg",
+					"img/imgitem/15.jpg",
+					"img/imgitem/8.jpg",
+					"images/qq.png",
+					"img/imgitem/5.jpg",
+					"img/imgitem/6.jpg",
+					"img/imgitem/11.jpg",
+					"images/205.jpg",
+					"images/202.jpg",
+					"img/imgitem/10.jpg",
+					"img/imgitem/4.jpg"
+				],
+				"refer": [
+					"new_show.html"
+				],
+				"priority": 0
+			},
+			"notifyDetial.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"fonts/mui.ttf",
+					"images/user-photo.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"detailed1.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"img/11e68b32340551721a791252e9b9b0ab.jpg",
+					"fonts/mui.ttf",
+					"img/122.png",
+					"images/download.jpg",
+					"css/icons-extra.css",
+					"img/123.png",
+					"images/huaju.jpg",
+					"js/jquery-2.1.0.js",
+					"img/124.png",
+					"images/football.jpg"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"comment.html": {
+				"resources": [
+					"css/feedback.css",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/comment.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"timePlan.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/jquery-2.1.0.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"activeList.html": {
+				"resources": [
+					"images/yuantiao.jpg",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/jquery-2.1.0.js",
+					"fonts/mui.ttf",
+					"images/download.jpg",
+					"images/football.jpg",
+					"images/qq.png"
+				],
+				"refer": [
+					"feedback.html"
+				],
+				"priority": 0
+			},
+			"createActive.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"img/11e68b32340551721a791252e9b9b0ab.jpg",
+					"fonts/mui.ttf"
 				],
 				"refer": [],
 				"priority": 0

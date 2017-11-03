@@ -15,17 +15,45 @@
 				max-width: 100%;
 				max-height: 150px;
 			}
+			
 			.mui-card {
 				margin-left: 0px;
 				margin-right: 0px;
 			}
-			#expandMore{cursor:pointer;}
-			#briefInfo{
-   				height:20px;
-    			overflow:hidden;
+			
+			#expandMore {
+				cursor: pointer;
 			}
-			p.text{
-				border: 1px solid rgba(232,232,232,0.75);
+			
+			#briefInfo {
+				height: 20px;
+				overflow: hidden;
+			}
+			
+			p.text {
+				border: 1px solid rgba(232, 232, 232, 0.75);
+			}
+			
+			.commentBox {
+				padding: 1%;
+				height: auto !important;
+				position: fixed;
+				bottom: 0px;
+				width: 100%;
+				background-color: #FFFFFF;
+				display: flex;
+				box-shadow: 0px 0px 5px rgba(34, 34, 34, .25);
+			}
+			
+			.comment {
+				border: 1px solid rgba(34, 34, 34, .25);
+				border-radius: 5px;
+				color: #8f8f94;
+				width: 70% !important;
+			}
+			
+			.commentBox button {
+				height: 40px;
 			}
 		</style>
 	</head>
@@ -50,52 +78,82 @@
 				<div class="mui-card-content">
 					<img id="pic" src="" style="max-height: 220px;" />
 					<div class="mui-card-content-inner">
-						<p style="color: #333333;">这里显示兼职主要内容，如让有需要的人明白兼职的时间，工资，兼职地点，等等一系列详细情况</p>
-						<p style="color: #333333;" >工作地点:</p>
-							<p class="text">金山宽城101号店</p>
-						
-						
-						<p style="color: #333333;">工作时间:</p>
-							<p class="text">每周六日上午11:00-13:00</p>
-						<p style="color: #333333;">工资详情：</p>
-							<p class="text">面谈</p>
+						<p style="color: #333333;">有没有人想来参加一个diy的活动：）相当有意思的</p>
+						<p style="color: #333333;">活动地点:</p>
+						<p class="text">金山宽城101号店</p>
+
+						<p style="color: #333333;">活动时间:</p>
+						<p class="text">每周六日上午11:00-13:00</p>
+						<p style="color: #333333;">活动详情：</p>
+						<p class="text">面谈</p>
 					</div>
 				</div>
 				<div class="mui-card-footer">
 					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						55
-					</span></a>
-					<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
+						20/55人</span>
+					</a>
+
 					<a class="mui-card-link"><span class="mui-icon mui-icon-eye">
-						
 					</span></a>
 				</div>
 			</div>
-			
+			<div style="padding: 5px;background-color: #FFFFFF;">
+				<span>他报了名：&ensp;</span>
+				<p class="nameList">
+					<a>罗辑&ensp;</a>、
+					<a>柳舒眉&ensp;</a>、
+					<a>赵云纺&ensp;</a>
+				</p>
+			</div>
+			<h4 style="border-bottom: 1px solid rgba(34,34,34,.25);background-color: #FFFFFF;margin: 0px;">评论：</h4>
+			<div class="commentDetialBox" style="padding: 10px;background-color: #FFFFFF;">
+			</div>
+			<div style="height: 60px;"></div>
+			<div class="commentBox">
+				<input class="comment" type="text" placeholder="发表你的看法" />
+				<button id="submit">发表</button>
+				<button id="getname">报名</button>
+			</div>
 			<div class="mui-off-canvas-backdrop"></div>
 		</div>
 		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 		<script type="text/javascript">
 			mui.init()
-          	mui.plusReady(function(){
-          		var self = plus.webview.currentWebview();
-          		var src = self.picSrc;
-          		var name = self.name;
-          		var time = self.time;
-          		var pic = self.pic
-          		document.getElementById('user').setAttribute('src',src);
-   				document.getElementById('userName').innerHTML = name;
-   				document.getElementById('pic').setAttribute('src',pic);
-   				document.getElementById('time').innerHTML =time;
-   				document.getElementById('user').addEventListener('tap',function(){
-   					mui.openWindow({
-   						url:'chat.html',
-   						id:'chat.html'
-   					})
-   				})
-          	})
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var src = self.picSrc;
+				var name = self.name;
+				var time = self.time;
+				var pic = self.pic
+				document.getElementById('user').setAttribute('src', src);
+				document.getElementById('userName').innerHTML = name;
+				document.getElementById('pic').setAttribute('src', pic);
+				document.getElementById('time').innerHTML = time;
+				document.getElementById('user').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'chat.html',
+						id: 'chat.html'
+					})
+				})
+				var flag = 1;
+				jQuery('#getname').click(function() {
+					if(flag == 1) {
+						$('.nameList').append('、<a>杜士华&ensp;</a>')
+					} else {
+						mui.toast('不能重复报名')
+					}
+					flag = 0;
+					var new_show = plus.webview.getWebviewById('new_show');
+					new_show.evalJS('document.getElementById("badge").style.display = "inline"');
+				})
+
+			})
+			$('#submit').click(function() {
+				if($('.comment').val() != null)
+					$('.commentDetialBox').append('<div class="commentItem"><a>杜士华:</a>' + $('.comment').val() + '</div>');
+				$('.comment').val(null)
+			})
 		</script>
 	</body>
 
