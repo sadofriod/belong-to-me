@@ -12,7 +12,7 @@
 			}
 			
 			.searchBox {
-				background-color: #5DA0C6;
+				background-color: #3395ff;
 				padding: 2%;
 				display: flex;
 				position: fixed;
@@ -31,7 +31,7 @@
 				float: none;
 				border-bottom-right-radius: 0px;
 				border-top-right-radius: 0px;
-				box-shadow: 0px 0px 10px rgba(34,34,34,.25);
+				box-shadow: 0px 0px 10px rgba(34, 34, 34, .25);
 			}
 			
 			label {
@@ -62,18 +62,12 @@
 		<header class="searchBox">
 			<div id="nav"></div>
 			<!--<a id="show-btn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>-->
-			<input type="search" id="searchInput" placeholder="热点消息" />
-			<label>搜索</label>
 		</header>
 		<div class="mui-content">
 			<nav class="mui-bar mui-bar-tab">
-				<a id="defaultTab" class="mui-tab-item mui-active" href="recommendedInformation.html">
+				<a class="mui-tab-item" href="recommendedInformation.html">
 					<span class="mui-icon mui-icon-home"></span>
 					<span class="mui-tab-label">动态</span>
-				</a>
-				<a class="mui-tab-item" href="pluralism1.html">
-					<span class="mui-icon mui-icon-paperplane"></span>
-					<span class="mui-tab-label">活动</span>
 				</a>
 				<a class="mui-tab-item" href="chatList.html">
 					<span class="mui-icon mui-icon-chatbubble"><span id="badge" class="mui-badge" style="display: none;">1</span></span>
@@ -84,10 +78,10 @@
 					<span class="mui-tab-label">我的</span>
 				</a>
 			</nav>
-
 		</div>
 	</body>
 	<script type="text/javascript" src="js/mui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 	<script type="text/javascript" charset="utf-8">
 		//mui初始化
 		mui.init({
@@ -95,12 +89,11 @@
 				backbutton: false
 			}
 		});
-		var subpages = ['recommendedInformation.html', 'pluralism1.html','chatList.html', 'setting.html'];
+		var subpages = ['recommendedInformation.html', 'chatList.html', 'setting.html'];
 		var subpage_style = {
-			top: '43px',
+			top: '0px',
 			bottom: '49px'
 		};
-
 		var aniShow = {};
 		//创建子页面，首个选项卡页面显示，其它均隐藏；
 		mui.plusReady(function() {
@@ -111,7 +104,7 @@
 				setTimeout(function() {
 					var s = plus.webview.all();
 				}, 1000)
-				if(i > 0) {
+				if(i >0) {
 					sub.hide();
 				} else {
 					temp[subpages[i]] = "true";
@@ -125,7 +118,7 @@
 			}
 		});
 		//当前激活选项
-		var activeTab = subpages[0];
+		var activeTab = subpages[2];
 		var title = document.getElementById("title");
 		//选项卡点击事件
 		mui('.mui-bar-tab').on('tap', 'a', function(e) {
@@ -133,6 +126,7 @@
 			if(targetTab == activeTab) {
 				return;
 			}
+
 			//更换标题
 
 			//title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
@@ -145,7 +139,7 @@
 				var temp = {};
 				temp[targetTab] = "true";
 				mui.extend(aniShow, temp);
-				plus.webview.show(targetTab, "fade-in", 300);
+				plus.webview.show(targetTab, "slide-in-right", 300);
 			}
 			//隐藏当前;
 			plus.webview.hide(activeTab);
@@ -153,31 +147,22 @@
 			activeTab = targetTab;
 		});
 		//自定义事件，模拟点击“首页选项卡”
-		document.addEventListener('gohome', function() {
-			var defaultTab = document.getElementById("defaultTab");
-			//模拟首页点击
-			mui.trigger(defaultTab, 'tap');
-			//切换选项卡高亮
-			var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
-			if(defaultTab !== current) {
-				current.classList.remove('mui-active');
-				defaultTab.classList.add('mui-active');
-			}
-		});
-//		var backButtonPress = 0;
-		mui.back = function(event) {
-//			backButtonPress++;
-			plus.webview.hide( 'new_show', 'fade-out', '200', null )
-			plus.navigator.setStatusBarBackground('#000000');
-//			if(backButtonPress = 0) {
-//				plus.runtime.quit();
-//			} else {
-//				plus.nativeUI.toast('再按一次退出应用');
+//		document.addEventListener('gohome', function() {
+//			var defaultTab = document.getElementById("defaultTab");
+//			//模拟首页点击
+//			mui.trigger(defaultTab, 'tap');
+//			//切换选项卡高亮
+//			var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+//			if(defaultTab !== current) {
+//				current.classList.remove('mui-active');
+//				defaultTab.classList.add('mui-active');
+//				
 //			}
-//			setTimeout(function() {
-//				backButtonPress = 0;
-//			}, 1000);
-//			return false;
+//		});
+		mui.back = function(event) {
+			plus.webview.hide('new_show', 'fade-out', '200', null)
+			plus.navigator.setStatusBarBackground('#000000');
+
 		};
 	</script>
 

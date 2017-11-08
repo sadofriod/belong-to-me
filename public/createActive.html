@@ -7,14 +7,14 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<style>
-			.text{
+			.text {
 				display: block;
 				width: 100%;
 				height: 44px;
-				border: 1px solid rgba(34,34,34,.25);
+				border: 1px solid rgba(34, 34, 34, .25);
 				line-height: 44px;
 				padding-left: 5px;
-				border-radius:8px ;
+				border-radius: 8px;
 			}
 		</style>
 	</head>
@@ -27,38 +27,54 @@
 		<div class="mui-content">
 			<div class="mui-card">
 				<div class="mui-card-header mui-card-media">
-					<img id="user" src="img/11e68b32340551721a791252e9b9b0ab.jpg" />
+					<img id="user" src="images/qq.png" />
 					<div class="mui-media-body">
 						<span id="userName"></span>
-						<p id="time">发表于 2016-06-30 15:30</p>
+						<p id="time">发表于 2017-11-11 11:30</p>
 					</div>
 				</div>
 				<div class="mui-card-content">
 					<img id="pic" src="" style="max-height: 220px;" />
 					<div class="mui-card-content-inner">
-						<p style="color: #333333;">有没有人想来参加一个diy的活动：）相当有意思的</p>
+						<p style="color: #333333;" id="dp">请输入活动介绍</p>
 						<p style="color: #333333;">活动地点:</p>
-						<p class="text" contenteditable="true"/>请输入活动地点</p>
+						<p class="text" contenteditable="true" id="place" />请输入活动地点</p>
 						<p style="color: #333333;">活动时间:</p>
-						<p class="text" contenteditable="true"/>请输入活动地点</p>
+						<p class="text" contenteditable="true" id="activetime" />请输入活动时间</p>
 						<p style="color: #333333;">活动详情：</p>
-						<p class="text" id="cardContent" contenteditable="true"/>请输入活动地点</p>
+						<p class="text" id="cardContent" contenteditable="true" />请输入活动详情</p>
 					</div>
 				</div>
 			</div>
-			<div  style="text-align: center;">
+			<div style="text-align: center;">
 				<button style="width: 96%;">发布</button>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
-			var cardContent = document.querySelector('#cardContent').innerHTML;
-			document.querySelector('button').addEventListener('click',function(){
-				var web = plus.webview.getWebviewById('pluralism1.html');
-				web.evalJS('appendCard()');
-
-				mui.back()
+			mui.plusReady(function() {
+				var cardContent = document.querySelector('#cardContent').innerHTML;
+				document.querySelector('button').addEventListener('click', function() {
+					var web = plus.webview.getWebviewById('recommendedInformation.html');
+					var card = {
+						username: '柳舒眉',
+						time: document.getElementById('time').innerHTML,
+						dp: document.getElementById('dp').innerHTML,
+						people: '123',
+						join: '10',
+						flag: 0,
+						isShow: false,
+						isChildShow: false,
+						time1: 90,
+						hide: 'block',
+						src: document.getElementById('user').getAttribute('src'),
+						activetime: document.getElementById('activetime').innerHTML,
+						place: document.getElementById('place').innerHTML,
+					}
+					web.evalJS('Vue.set(vm.card,5,' + card + ');Vue.set(vm1.card,5,' + card + ')');
+					mui.back()
+				})
 			})
 		</script>
 	</body>

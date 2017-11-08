@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/icons-extra.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 		<style>
 			* {
@@ -60,15 +61,18 @@
 				font-family: "微软雅黑";
 				border-radius: 5px;
 				color: #FFFFFF;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding-top: 20px;
 			}
 			
 			a:link {
-				color: #222222;
+				color: #3395ff;
 			}
 			
 			.sItem {
 				width: 32%;
-				box-shadow: 0px 0px 10px rgba(34,34,34,.25);
+				box-shadow: 0px 0px 10px rgba(34, 34, 34, .25);
 				float: left;
 				margin-left: 0.8%;
 				margin-top: 1%;
@@ -89,7 +93,7 @@
 			.favTitle {
 				text-align: center;
 				color: #FFFFFF;
-				background-color: #5DA0C6;
+				background-color: #3395ff;
 				margin-bottom: 0px;
 				padding-bottom: 10px;
 				font-size: 30px;
@@ -128,20 +132,21 @@
 			
 			.left {
 				left: 0px;
+				color: #3395ff;
+				border: #3395ff solid 1px;
 			}
 			
 			.right {
 				right: 0px;
+				color: #3395ff;
+				border: #3395ff solid 1px;
 			}
 			
 			.finsih {
 				width: 100px;
-				height: 100px;
-				color: #FFFFFF;
-				border-radius: 50%;
-				background-color: rgba(49, 181, 208, .25);
-				border: 0px;
-				box-shadow: 0px 0px 10px #5DA0C6;
+				height: 44px;
+				color: #3395ff;
+				border: 1px solid #3395ff;
 			}
 			
 			.btn-group {
@@ -150,6 +155,17 @@
 				margin-right: 5%;
 				padding: 5px;
 			}
+			
+			.mui-input-row {
+				position: relative;
+				width: 80%;
+				margin-left: 10%;
+				border-bottom: 1px solid rgba(34, 34, 34, .25)
+			}
+			.navItem{
+				color: #3395ff;
+				border: 1px solid #3395ff;
+			}
 		</style>
 	</head>
 
@@ -157,17 +173,9 @@
 		<div class="carousel">
 			<div class="itemBox">
 				<div class="carouselItem active">
-					<div style="display: flex;padding-top: 50%;margin-bottom: 20%;">
-						<img class="sex" src="img/boy.png" style="border-radius: 50%; height: 110px; width: 110px;margin-left:14% ;" />
-						<img class="sex" src="img/girl.png" style="border-radius: 50%;  height: 110px; width: 110px; margin-left:12% ;" />
-					</div>
-					<h1 style="text-align: center; font-family: '微软雅黑'; font-size: 50px; color: #DB7093;"><span style="color: #31B0D5;" >男 O</span>R 女</h1>
-					<div style="text-align: center;">
-						<button class="right">下一步</button>
-					</div>
-				</div>
-				<div class="carouselItem">
 					<p class="favTitle">选择你的学校</p>
+					<span style="font-size: 120px; color: #3395ff;display: block;text-align: center;margin: 20px;" class="mui-icon-extra mui-icon-extra-regist"></span>
+					
 					<div class="mui-input-row">
 						<label>学校</label>
 						<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入学校">
@@ -184,85 +192,85 @@
 						<label>验证码</label>
 						<input id='account' type="text" class="mui-input-clear mui-input" placeholder="验证码">
 					</div>
+					<p style="padding-left: 20px;padding-right: 20px;padding-top: 20px;text-align: center;font-size: 14px;">
+						我们会根据您所提供的信息，进行课程信息的获取。为您合理推荐活动
+					</p>
 					<div class="btn-group">
-						<button class="left">上一步</button>
 						<button class="right">下一步</button>
 					</div>
-					<p style="padding-left: 20px;padding-right: 20px;padding-top: 20px;text-align: center;font-size: 18px;border-top: 1px solid rgba(34,34,34,.25);">
-						我们会根据您所提供的信息，进行课程信息的获取。在这之后我们为您推荐的活动都不会与您的课程冲突。
-					</p>
+					
 				</div>
 				<div class="carouselItem" style="overflow-x:hidden ;">
 					<p class="favTitle">选择你的偏好</p>
-					<div class="sItem" data-study="1">
+					<div class="sItem" data-f="1">
 						<img src="img/imgitem/1.jpg" />
 						<p>高等数学</p>
 					</div>
-					<div class="sItem" data-study="1">
+					<div class="sItem" data-f="1">
 						<img src="img/imgitem/16.jpg" />
 						<p>线性代数</p>
 					</div>
-					<div class="sItem" data-study="1">
+					<div class="sItem" data-f="1">
 						<img src="img/imgitem/3.jpg" />
 						<p>概率与统计</p>
 					</div>
-					<div class="sItem" data-study="1">
+					<div class="sItem" data-f="1">
 						<img src="img/imgitem/4.jpg" />
 						<p>离散数学</p>
 					</div>
-					<div class="sItem" data-sport="1">
+					<div class="sItem" data-f="2">
 						<img src="img/imgitem/5.jpg" />
 						<p>篮球</p>
 					</div>
-					<div class="sItem" data-sport="1">
-						<img src="img/imgitem/6.jpg"/>
+					<div class="sItem" data-f="2">
+						<img src="img/imgitem/6.jpg" />
 						<p>足球</p>
 					</div>
-					<div class="sItem" data-sport="1">
+					<div class="sItem" data-f="2">
 						<img src="img/imgitem/7.jpg" />
 						<p>乒乓球</p>
 					</div>
-					<div class="sItem" data-sport="1">
+					<div class="sItem" data-f="2">
 						<img src="img/imgitem/10.jpg" />
 						<p>网球</p>
 					</div>
-					<div class="sItem" data-group="1">
+					<div class="sItem" data-f="3">
 						<img src="img/imgitem/15.jpg" />
 						<p>棋社</p>
 					</div>
-					<div class="sItem" data-group="1">
+					<div class="sItem" data-f="3">
 						<img src="img/imgitem/8.jpg" />
 						<p>武术社</p>
 					</div>
-					<div class="sItem" data-group="1">
+					<div class="sItem" data-f="3">
 						<img src="img/imgitem/9.jpg" />
 						<p>骑行社</p>
 					</div>
-					<div class="sItem" data-group="1">
+					<div class="sItem" data-f="3">
 						<img src="img/imgitem/2.jpg" />
 						<p>话剧社</p>
 					</div>
-					<div class="sItem" data-work="1">
+					<div class="sItem" data-f="4">
 						<img src="img/imgitem/11.jpg" />
 						<p>平面设计</p>
 					</div>
-					<div class="sItem" data-work="1">
+					<div class="sItem" data-f="4">
 						<img src="img/imgitem/12.jpg" />
 						<p>交互设计</p>
 					</div>
-					<div class="sItem" data-work="1">
+					<div class="sItem" data-f="4">
 						<img src="img/imgitem/14.jpg" />
 						<p>数据分析</p>
 					</div>
-					<div class="sItem" data-high="1">
+					<div class="sItem" data-f="5">
 						<img src="images/202.jpg" />
 						<p>美食</p>
 					</div>
-					<div class="sItem" data-high="1">
+					<div class="sItem" data-f="5">
 						<img src="images/205.jpg" />
 						<p>逛街</p>
 					</div>
-					<div class="sItem" data-high="1">
+					<div class="sItem" data-f="5">
 						<img src="images/qq.png" />
 						<p>游戏</p>
 					</div>
@@ -278,14 +286,17 @@
 				</div>
 				<div id="third" class="carouselItem">
 					<p class="favTitle">偏好图示</p>
-					<div class="roundBox" style="position: relative;">
-						<div class="roundItem RI1" style=" left: 1.7%;background-color: #f44726;">60</div>
-						<div class="roundItem RI2" style=" left: 21.4%;background-color:#fdeb52">70</div>
-						<div class="roundItem RI3" style=" left: 41.1%; background-color: #a5d476;">80</div>
-						<div class="roundItem RI4" style=" right: 21.9%;background-color: #004b80;">50</div>
-						<div class="roundItem RI5" style=" right: 1.7%;background-color: #f4b3cf;">60</div>
+					<span class="mui-icon-extra mui-icon-extra-topic" style="font-size: 120px; color: #3395ff;display: block;text-align: center;margin: 20px;">
+						
+					</span>
+					<div class="roundBox" style="position: relative;width: 80%;margin-left: 10%;">
+						<div class="roundItem RI1" style=" left: 1.7%;background-color: #FFB400;"></div>
+						<div class="roundItem RI2" style=" left: 21.4%;background-color:#FFB400"></div>
+						<div class="roundItem RI3" style=" left: 41.1%; background-color: #FFB400;"></div>
+						<div class="roundItem RI4" style=" right: 21.9%;background-color: #FFB400;"></div>
+						<div class="roundItem RI5" style=" right: 1.7%;background-color: #FFB400;"></div>
 					</div>
-					<nav>
+					<nav style="position: relative;width: 80%;margin-left: 10%;">
 						<a href="#" class="navItem">娱乐</a>
 						<a href="#" class="navItem">运动</a>
 						<a href="#" class="navItem">学习</a>
@@ -295,7 +306,7 @@
 					<div style="width: 100%;text-align: center;margin-top: 10%;margin-bottom:2% ;">
 						<button class="finsih">开始体验</button>
 					</div>
-					<p style="padding-left: 20px;padding-right: 20px;padding-top: 10px;text-align: center;font-size: 14px;border-top: 1px solid rgba(34,34,34,.25);">
+					<p style="padding-left: 20px;padding-right: 20px;padding-top: 10px;text-align: center;font-size: 14px;">
 						若有更改请到个人中心，个人定制尽心修改
 					</p>
 				</div>
@@ -313,67 +324,7 @@
 			var navHeigth = plus.navigator.getStatusbarHeight();
 			console.log(navHeigth);
 			document.querySelector('.carousel').style.height = height + 'px';
-			document.querySelector('.roundBox').style.height = height / 2 + 'px'
-			//			var can = document.querySelector('#myCanvas');
-			//			var can1 = document.querySelector('#myCanvas1');
-			//			can.style.height = plus.display.resolutionHeight / 2;
-			//			can.style.width = plus.display.resolutionHeight;
-			//			var ctx = can.getContext('2d');
-			//			var ctx1 = can1.getContext('2d');
-			//			can.height = height / 2;
-			//			can.width = width;
-			//			console.log(width)
-			//			console.log(can.height + '  ' + can.width)
-			//
-			//			function setPoint(rote, num) {
-			//				var height = can.height / 2;
-			//				var width = can.width / 2;
-			//				var sit = {};
-			//				sit.y = height + (height - num) * Math.sin(rote * 3.14 / 180);
-			//				sit.x = width + (height - num) * Math.cos(rote * 3.14 / 180);
-			//				return sit;
-			//			}
-			//
-			//			function draw() {
-			//				var point;
-			//				var rote = 0;
-			//
-			//				for(var i = 0; i < 6; i++) {
-			//					point = setPoint(rote, 40)
-			//					if(i == 0) {
-			//						ctx.moveTo(point.x, point.y);
-			//					}
-			//					ctx.lineTo(point.x, point.y);
-			//					if(i < 5) {
-			//						rote += 72;
-			//					}
-			//				}
-			//				ctx.stroke();
-			//				ctx.fillStyle = "#31B0D5";
-			//				ctx.fill();
-			//			}
-			//
-			//			function drawSmall() {
-			//				var pArray = [60, 50, 65, 60, 50];
-			//				var point;
-			//				var rote = 0;
-			//				for(var i = 0; i < 6; i++) {
-			//					point = setPoint(rote, pArray[i])
-			//					if(i == 0) {
-			//						ctx.moveTo(point.x, point.y+150);
-			//					}
-			//					ctx.lineTo(point.x, point.y+150);
-			//					if(i < 5) {
-			//						rote += 72;
-			//					}
-			//				}
-			//				ctx1.stroke();
-			//				ctx1.fillStyle = "#8A6DE9";
-			//				ctx1.fill();
-			//
-			//			}
-			//			draw();
-			//			drawSmall();
+			document.querySelector('.roundBox').style.height = height / 3.5 + 'px'
 		});
 		jQuery('.carousel').Carousel({
 			carouselId: '.itemBox', //轮播项目外层盒子的class或者ID
@@ -382,36 +333,55 @@
 			carouselHeight: 1 //轮播项目高度 最高为1最小为0
 		});
 		$('.sItem').click(function() {
-			$(this).css('box-shadow','0px 0px 10px rgba(49, 181, 208, 1)');
-			
+			$(this).css('box-shadow', '0px 0px 10px rgba(49, 181, 208, 1)');
+			if($(this).attr('data-f') == 1){
+				study += 10;
+				$('.RI1').html(study)
+			}
+			if($(this).attr('data-f') == 2){
+				sport += 10;
+				$('.RI2').html(sport)
+			}
+			if($(this).attr('data-f') == 3){
+				group += 10;
+				$('.RI3').html(group)
+			}
+			if($(this).attr('data-f') == 4){
+				work += 10;
+				$('.RI4').html(work)
+			}
+			if($(this).attr('data-f') == 5){
+				high += 10;
+				$('.RI5').html(high)
+			}
 		})
 		$('#showNext').click(function() {
 			if($('#third').css('display') != 'none') {
 				$('.RI1').animate({
-					height: '60%'
+					height: high+'%'
 				}, 2000)
 				$('.RI2').animate({
-					height: '70%'
+					height: sport+'%'
 				}, 2000)
 				$('.RI3').animate({
-					height: '80%'
+					height: study+'%'
 				}, 2000)
 				$('.RI4').animate({
-					height: '50%'
+					height: work+'%'
 				}, 2000)
 				$('.RI5').animate({
-					height: '60%'
+					height: group+'%'
 				}, 2000)
 			}
 
 		})
 		$('.finsih').click(function() {
 			mui.openWindow({
-				url:'new_show.html',
-				id:'new_show'
+				url: 'new_show.html',
+				id: 'new_show'
 			});
 		})
-		var sport,group,study,work,high;
+		var sport=40, group=40, study=40, work=40, high=40;
 	</script>
 
 </html>

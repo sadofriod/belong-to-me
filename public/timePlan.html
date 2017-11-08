@@ -12,10 +12,6 @@
 				overflow: hidden;
 			}
 			
-			.container {
-				margin-top: 44px;
-			}
-			
 			.topBox {
 				padding: 10px;
 				height: 50%;
@@ -70,10 +66,6 @@
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">我的规划</h1>
-		</header>
 		<div class="container">
 			<div class="topBox">
 				<p class="time">
@@ -84,35 +76,74 @@
 					<button id="close" style="position: absolute;bottom: 0px;right: 10px;">查看详情</button>
 				</p>
 			</div>
-			<div class="bottomBox">
+			<div id="bottomBox" class="bottomBox">
+				<div class="item" v-for="word in words">
+					星期{{word.week}}
+					<br><br><br><br>
+					<span>
+						{{word.word}}
+					</span>
+					<br>
+					<span>
+						{{word.word}}
+					</span>
+				</div>
 			</div>
 		</div>
 	</body>
 	<script src="js/mui.min.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
 	<script type="text/javascript">
 		mui.init()
+
 		mui.plusReady(function() {
 			var height = plus.display.resolutionHeight;
-			document.querySelector('.container').style.height = height - 44 + 'px'
+			document.querySelector('.container').style.height = height - 92 + 'px'
 			var d = new Date();
-			var word = ['话剧', '网球', '科普', '狼人杀', '足球', '篮球'];
-			for(var i = 0; i < 5; i++) {
-				if(i == 0) {
-					$('.bottomBox').append('<div class="item active">星期' + d.getDay() + '<br><br><br>今日<br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
-				} else {
-					if((d.getDay() + i) <= 7)
-						$('.bottomBox').append('<div class="item">星期' + (d.getDay() + i) + '<br><br><br><br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
-					else
-						$('.bottomBox').append('<div class="item">星期' + (d.getDay() + i - 7) + '<br><br><br><br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
-				}
-
-			}
+			var words = ['话剧', '网球', '科普', '狼人杀', '足球', '篮球'];
+			//			for(var i = 0; i < 5; i++) {
+			//				if(i == 0) {
+			//					$('.bottomBox').append('<div class="item active">星期' + d.getDay() + '<br><br><br>今日<br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
+			//				} else {
+			//					if((d.getDay() + i) <= 7)
+			//						$('.bottomBox').append('<div class="item">星期' + (d.getDay() + i) + '<br><br><br><br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
+			//					else
+			//						$('.bottomBox').append('<div class="item">星期' + (d.getDay() + i - 7) + '<br><br><br><br><span>' + word[i] + '</span><br><span>' + word[i + 1] + '</span></div>')
+			//				}
+			//
+			//			}
 			document.getElementById('close').addEventListener('click', function() {
 				var new_show = plus.webview.getWebviewById('new_show');
 				new_show.evalJS('plus.webview.show(subpages[1])');
-				mui.back();
 			});
+		})
+		new Vue({
+			el: '#bottomBox',
+			data: {
+				words: [{
+					word: '话剧'
+				}, {
+					word: '网球'
+				},{
+					word: '科普'
+				},{
+					word: '篮球'
+				},{
+					word: '狼人杀'
+				},{
+					word: '足球'
+				},],
+				week:""
+			},
+			
+			watch:{
+				week:function(){
+					var d = new Date();
+					this.week = d.getDay() + i - 7
+					return this.week;
+				}
+			}
 		})
 	</script>
 

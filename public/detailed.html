@@ -78,19 +78,21 @@
 				<div class="mui-card-content">
 					<img id="pic" src="" style="max-height: 220px;" />
 					<div class="mui-card-content-inner">
-						<p style="color: #333333;">有没有人想来参加一个diy的活动：）相当有意思的</p>
+						<p style="color: #333333;" id="dp">有没有人想来参加一个diy的活动：）相当有意思的</p>
 						<p style="color: #333333;">活动地点:</p>
-						<p class="text">金山宽城101号店</p>
+						<p class="text" id="place">金山宽城101号店</p>
 
 						<p style="color: #333333;">活动时间:</p>
-						<p class="text">每周六日上午11:00-13:00</p>
+						<p class="text" id="activetime">每周六日上午11:00-13:00</p>
 						<p style="color: #333333;">活动详情：</p>
 						<p class="text">面谈</p>
 					</div>
 				</div>
 				<div class="mui-card-footer">
-					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						20/55人</span>
+					<a class="mui-card-link">
+						<span class="mui-badge mui-badge-primary" id="people">
+							
+						</span>
 					</a>
 
 					<a class="mui-card-link"><span class="mui-icon mui-icon-eye">
@@ -125,11 +127,19 @@
 				var src = self.picSrc;
 				var name = self.name;
 				var time = self.time;
-				var pic = self.pic
+				var pic = self.pic;
+				var dp = self.dp;
+				var activetime = self.activeTime;
+				var place = self.place;
+				var people = self.people;
 				document.getElementById('user').setAttribute('src', src);
 				document.getElementById('userName').innerHTML = name;
 				document.getElementById('pic').setAttribute('src', pic);
 				document.getElementById('time').innerHTML = time;
+				document.getElementById('dp').innerHTML = dp;
+				document.getElementById('activetime').innerHTML = activetime;
+				document.getElementById('place').innerHTML = place;
+				document.getElementById('people').innerHTML = people +'人参与';
 				document.getElementById('user').addEventListener('tap', function() {
 					mui.openWindow({
 						url: 'chat.html',

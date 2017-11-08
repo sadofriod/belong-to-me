@@ -253,20 +253,6 @@
 										<p class='mui-ellipsis'>账号:793634614</p>
 									</div>
 								</a>
-								<div>
-									<div class="mui-col-xs-6 mui-col-sm-6" style="display: flex;float: left;">
-										<span style="font-size:14px ;">领导值:</span>
-										<div class="skillData">
-											<div style="width: 60%;">60分</div>
-										</div>
-									</div>
-									<div class="mui-col-xs-6 mui-col-sm-6" style="display: flex;float: left;">
-										<span style="font-size:14px ;">参与度:</span>
-										<div class="skillData">
-											<div style="width: 60%;">60分</div>
-										</div>
-									</div>
-								</div>
 
 							</li>
 						</ul>
@@ -276,9 +262,7 @@
 							</li>
 						</ul>
 						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">
-								<a id="myTime" class="mui-navigate-right">我的时间</a>
-							</li>
+							
 							<li class="mui-table-view-cell">
 								<a id="createActive" class="mui-navigate-right">创建活动</a>
 							</li>
@@ -289,7 +273,7 @@
 								<a href="#privacy" class="mui-navigate-right">隐私</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a id="active" class="mui-navigate-right">我的活动</a>
+								<a id="active" class="mui-navigate-right">等待评价</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a id="personal" class="mui-navigate-right">个人定制</a>
@@ -994,12 +978,6 @@
 						mui.openWindow({
 							url: 'guide.html',
 							id: 'guide'
-						})
-					})
-		document.getElementById('myTime').addEventListener('click', function() {
-						mui.openWindow({
-							url: 'timePlan.html',
-							id: 'timePlan'
 						})
 					})
 		document.getElementById('active').addEventListener('click', function() {

@@ -7,206 +7,185 @@
 		<title></title>
 		<link rel="stylesheet" href="css/mui.min.css" />
 		<link rel="stylesheet" href="css/icons-extra.css" />
+		<link rel="stylesheet" href="css/recommend.css" />
 		<style>
-			.mui-card-content img {
-				max-width: 100%;
-				max-height: 150px;
-				margin: 5px;
+			* {
+				background-color: #FFFFFF;
 			}
 			
-			.mui-card {
-				margin-left: 0px;
-				margin-right: 0px;
+			.mui-control-content {
+				background-color: white;
+				min-height: 328px;
+			}
+			#item1mobile,#item2mobile,#item3mobile{
+				border: 0px;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div class="mui-content">
-			<div id="active">
-				<div class="mui-card">
-					<div class="mui-card-header mui-card-media">
-						<img class="head" src="img/123.png" />
-						<div class="mui-media-body">
-							<span class="username">柳舒眉</span>
-							<p class="time">发表于 2017-06-30 17:32</p>
+			<div id="time-plan">
+				<div class="glass"></div>
+				<div class="time">
+					<div class="week">
+						<h2>Sat</h2>
+						<p style="padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.50);color: #FFFFFF;">11.11</p>
+					</div>
+				</div>
+				<div class="plan">
+
+					<div class="parameter">
+						<div class="pbox leader">
+							<div class="valueBox">
+								<div class="value" style="background-color: #FFB400; height: 60%;"></div>
+							</div>leader
 						</div>
-						<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
-					</div>
-					<div class="mui-card-content">
-						<img src="images/huaju.jpg" />
-						<div class="mui-card-content-inner">
-							<p style="color: #333;">有人想来参加话剧团吗，释放内心的自己展现自己</p>
+						<div class="pbox player">
+							<div class="valueBox">
+								<div class="value" style="background-color: #FFB400; height: 70%;"></div>
+							</div> player
+						</div>
+						<div class="pbox freeTime">
+							<div class="valueBox">
+								<span id="timeNum"></span>
+								<div class="value" id="timeValue" style="background-color: #FFB400; height: 50%;"></div>
+							</div> time
+						</div>
+						<div class="money">
+							<h3>Wealth value:</h3>
+							<h2>533</h2>
 						</div>
 					</div>
-					<div class="mui-card-footer">
-						<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						124次
-					</span></a>
-						<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
-						<a class="mui-card-link eye">
-							<span class="mui-icon mui-icon-eye">
+
+				</div>
+				<div class="hide-button">
+					<span class="mui-icon-extra mui-icon-extra-lamp" style="background-color: rgba(0,0,0,0);font-size: 18px; color: rgba(255,255,255,.52);"></span>
+					<span style="background-color: rgba(0,0,0,0); color: rgba(255,255,255,.52); ">根据您的时间和偏好每日为您推荐</span>
+					<button class=" hidden-button">收起</button>
+				</div>
+			</div>
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="border: 0px;">
+					<a class="mui-control-item" href="#item1mobile">
+						今日推荐
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						全部活动
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						报名活动
 					</a>
 				</div>
-			</div>
-			
-			<div class="mui-card">
-				<div class="mui-card-header mui-card-media">
-					<img class="head" src="img/122.png" />
-					<div class="mui-media-body">
-						<span class="username">小雯</span>
-						<p class="time">发表于 2017-06-29 14:30</p>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div id="active">
+									<div class="card-information" v-for="(card1,index) in card" v-bind:class="{'visible':card1.flag}" v-bind:style="{display:card1.hide}">
+										<div class="userInfo">
+											<img class="userhead" v-bind:src="card1.src" />
+											<div class="userinf">
+												<span>
+												发布者:{{card1.username}}
+											</span><br />
+												<span>
+												发布时间：{{card1.time}}
+											</span>
+											</div>
+										</div>
+
+										<div class="card-content" v-on:click="open(index)">
+											<h4>{{card1.dp}}</h4>
+										</div>
+										<div class="card-content-assess">
+											<span class="left-assess">{{card1.people}}人赞</span>
+											<span class="right-assess">{{card1.join}}人参与</span>
+										</div>
+										<div class="btn-group" v-bind:class="{'btn-show-animation':card1.isShow}">
+											<button class="submit btn-chose" v-on:click="addPeople(index)" v-bind:class="{'btn-show':card1.isChildShow}">报名</button>
+											<button class="detail btn-chose" v-on:click="openWin(index)" v-bind:class="{'btn-show':card1.isChildShow}">详情</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
-				</div>
-				<div class="mui-card-content">
-					<img src="images/download.jpg" />
-					<div class="mui-card-content-inner">
-						<p id="p" style="color: #333;">在内蒙古工业大学金川校区的网球活动，来人呐！</p>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div id="active1">
+									<div class="card-information" v-for="(card2,index) in card" v-bind:class="{'visible':card2.flag}" v-bind:style="{display:card2.hide}">
+										<div class="userInfo">
+											<img class="userhead" v-bind:src="card2.src" />
+											<div class="userinf">
+												<span>
+												发布者:{{card2.username}}
+											</span><br />
+												<span>
+												发布时间：{{card2.time}}
+											</span>
+											</div>
+										</div>
+
+										<div class="card-content" v-on:click="open(index)">
+											<h4>{{card2.dp}}</h4>
+										</div>
+										<div class="card-content-assess">
+											<span class="left-assess">{{card2.people}}人赞</span>
+											<span class="right-assess">{{card2.join}}人参与</span>
+										</div>
+										<div class="btn-group" v-bind:class="{'btn-show-animation':card2.isShow}">
+											<button style="width: 100%;" class="detail btn-chose" v-on:click="openWin(index)" v-bind:class="{'btn-show':card2.isChildShow}">详情</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				
-				<div class="mui-card-footer">
-					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						183次
-					</span></a>
-						<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
-						<a class="mui-card-link eye">
-							<span class="mui-icon mui-icon-eye">
-					</a>
-				</div>
-			</div>
-			
-			<div class="mui-card">
-				<div class="mui-card-header mui-card-media">
-					<img class="head" src="images/qq.png" />
-					<div class="mui-media-body">
-						<span class="username">罗辑</span>
-						<p class="time">发表于 2017-06-30 15:30</p>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div id="active2">
+									<div class="card-information hidden" v-for="(card3,index) in card" v-bind:class="{'visible':card3.flag}" style="display: none;">
+										<div class="userInfo">
+											<img class="userhead" v-bind:src="card3.src" />
+											<div class="userinf">
+												<span>
+												发布者:{{card3.username}}
+											</span><br />
+												<span>
+												发布时间：{{card3.time}}
+											</span>
+											</div>
+										</div>
+
+										<div class="card-content" v-on:click="open(index)">
+											<h4>{{card3.dp}}</h4>
+										</div>
+										<div class="card-content-assess">
+											<span class="left-assess">{{card3.people}}人赞</span>
+											<span class="right-assess">{{card3.join}}人参与</span>
+										</div>
+										<div class="btn-group" v-bind:class="{'btn-show-animation':card3.isShow}">
+											<button style="width: 100%;" class="detail btn-chose" v-on:click="openWin(index)" v-bind:class="{'btn-show':card3.isChildShow}">详情</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
-				</div>
-				<div class="mui-card-content">
-					<img src="" />
-					<div class="mui-card-content-inner">
-						<p id="p" style="color: #333;">好无聊啊，你们有什么活动加我一个哇！！！！！</p>
-					</div>
-				</div>
-				<div class="mui-card-footer">
-					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						145次
-					</span></a>
-						<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
-						<a class="mui-card-link eye">
-							<span class="mui-icon mui-icon-eye">
-					</a>
-				</div>
-			</div>
-			<div class="mui-card">
-				<div class="mui-card-header mui-card-media">
-					<img class="head" src="img/125.png" />
-					<div class="mui-media-body">
-						<span class="username">亮亮</span>
-						<p class="time">发表于 2017-06-29 10:02</p>
-					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
-				</div>
-				<div class="mui-card-content">
-					<img src="images/301.jpg" />
-					<div class="mui-card-content-inner">
-						<p id="p" style="color: #333;">有没有人想来参加一个diy的活动：）相当有意思的</p>
-					</div>
-				</div>
-				<div class="mui-card-footer">
-					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						73次
-					</span></a>
-						<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
-						<a class="mui-card-link eye">
-							<span class="mui-icon mui-icon-eye">
-					</a>
-				</div>
-			</div>
-			<div class="mui-card">
-				<div class="mui-card-header mui-card-media">
-					<img class="head" src="img/123.png" />
-					<div class="mui-media-body">
-						<span class="username">晶静</span>
-						<p class="time">发表于 2017-06-28 19:00</p>
-					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
-				</div>
-				<div class="mui-card-content">
-					<img src="images/langren.jpg" />
-					<div class="mui-card-content-inner">
-						<p id="p" style="color: #333;">有没有人来玩狼人杀？ 就缺2个人了！</p>
-					</div>
-				</div>
-				<div class="mui-card-footer">
-					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						236次
-					</span></a>
-						<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
-						<a class="mui-card-link eye">
-							<span class="mui-icon mui-icon-eye">
-					</a>
 				</div>
 			</div>
-			<div class="mui-card">
-				<div class="mui-card-header mui-card-media">
-					<img class="head" src="img/124.png" />
-					<div class="mui-media-body">
-						<span class="username">漆黑的夜</span>
-						<p class="time">发表于 2017-06-28 15:06</p>
-					</div>
-					<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
-					<h2>小M</h2>
-					<p>发表于 2016-06-30 15:30</p>-->
-				</div>
-				<div class="mui-card-content">
-					<img src="images/football.jpg" />
-					<div class="mui-card-content-inner">
-						<p id="p" style="color: #333;">有人来踢足球吗? 友谊球赛</p>
-					</div>
-				</div>
-				<div class="mui-card-footer">
-					<a class="mui-card-link"><span class="mui-badge mui-badge-primary">
-						59次
-					</span></a>
-						<a class="mui-card-link"><span class="mui-icon mui-icon-chat">
-						
-					</span></a>
-						<a class="mui-card-link eye">
-							<span class="mui-icon mui-icon-eye">
-					</a>
-				</div>
-			</div>
-			</div>
-							<div class="mui-off-canvas-backdrop"></div>
-					</div>
+		</div>
+		<div class="mui-off-canvas-backdrop"></div>
+
 	</body>
 	<script type="text/javascript" src="js/mui.min.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/recommend.js"></script>
 	<script>
 		mui.init()
 		mui.plusReady(function() {
@@ -214,56 +193,7 @@
 				var detail = plus.webview.getWebviewById('comment.html');
 				detail.show();
 			});
-			var proView = mui.preload({
-				url: 'comment.html',
-				id: 'comment.html'
-			});
-			console.log(localStorage[localStorage.massageNum]);
-			console.log(localStorage[localStorage.imgNum]);
-			//			for (var i = 0;i<=localStorage.massageNum;i++) {
-			//				jQuery('.mui-content').append(card);
-			//			}
-			var date = new Date()
-			console.log(date)
-		})
-		$('.eye').on('click', function(e) {
-			if($(this).attr('name') == 0) {
-				mui.toast('关注成功');
-				$(this).attr('name', 1);
-			} else {
-				mui.toast('取消关注');
-			}
-		})
-		$('.mui-icon-compose').click(function(){
-          		mui.openWindow({
-          			url: 'comment.html',
-					id: 'comment.html'
-          		})
-          });
-		$('.mui-card-content').click(function() {
-			var src = $(this).parent().find('.head').attr('src');
-			var name = $(this).parent().find('.username').html();
-			var time = $(this).parent().find('.time').html();
-			var pic = $(this).find('img').attr('src');
-			var context = $(this).find('.mui-card-content-inner').html();
-			mui.openWindow({
-				url: 'detailed1.html',
-				id: 'detailed1',
-				extras:{
-					picSrc:src,
-					pic:pic,
-					name:name,
-					time:time,
-					context:context
-				}
-			})
-		})
-		$('.head').click(function() {
-			mui.openWindow({
-				url: 'chat.html',
-				id: 'chat'
-				
-			})
+		
 		})
 	</script>
 

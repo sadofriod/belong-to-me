@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
 		<style>
 			.area {
 				margin: 20px auto 0px auto;
@@ -78,6 +77,9 @@
 				$.plusReady(function() {
 					plus.get
 					var settings = app.getSettings();
+					function test(regInfo){
+						return regInfo;
+					}
 					var regButton = doc.getElementById('reg');
 					var accountBox = doc.getElementById('account');
 					var passwordBox = doc.getElementById('password');
@@ -90,14 +92,13 @@
 							email: emailBox.value
 						};
 						console.log(regInfo.account+'  '+regInfo.password+'  '+regInfo.email)
-						mui.ajax('http://www.yxz107.cn/userRegister.php', {
-							data: {
-								user_name: regInfo.account,
-								user_password: regInfo.password,
-								user_email: regInfo.email
-							},
-							dataType: 'json',
-							type: 'post',
+						mui.ajax('http://47.91.249.84/userRegister.php', {
+							data: 
+								test(regInfo)
+							,
+							dataType: 'jsonp',
+							jsonp:'callback',
+							method: 'post',
 							timeout: 10000,
 							headers: {
 								'Content-Type': 'application/json'

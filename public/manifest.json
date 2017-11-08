@@ -258,7 +258,10 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"recommendedInformation.html",
-					"js/silderMenu.js"
+					"js/silderMenu.js",
+					"img/shalou.png",
+					"img/shalou.ico",
+					"js/jquery-2.1.0.js"
 				],
 				"refer": [
 					"offcanvas-drag-right-plus-menu.html",
@@ -266,7 +269,8 @@
 					"chatList.html",
 					"pluralism1.html",
 					"setting.html",
-					"guide.html"
+					"guide.html",
+					"timePlan.html"
 				],
 				"priority": 0
 			},
